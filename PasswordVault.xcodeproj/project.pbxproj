@@ -14,11 +14,12 @@
 		952B74AA1F292D5B00B378FF /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A91F292D5B00B378FF /* Group.swift */; };
 		952B74AD1F292EB000B378FF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74AC1F292EB000B378FF /* Protocols.swift */; };
 		952B74AF1F2936C800B378FF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74AE1F2936C800B378FF /* GroupTableViewCell.swift */; };
+		952B74B21F29478500B378FF /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B11F29478500B378FF /* GroupTests.swift */; };
+		952B74B51F2947E000B378FF /* GroupsTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */; };
 		9531C6D91F29153900435143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6D81F29153900435143 /* AppDelegate.swift */; };
 		9531C6E11F29153900435143 /* PasswordVault.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6DF1F29153900435143 /* PasswordVault.xcdatamodeld */; };
 		9531C6E31F29153900435143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E21F29153900435143 /* Assets.xcassets */; };
 		9531C6E61F29153900435143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E41F29153900435143 /* LaunchScreen.storyboard */; };
-		9531C6F11F29153900435143 /* PasswordVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6F01F29153900435143 /* PasswordVaultTests.swift */; };
 		F31890B8AD05DC49928D388F /* Pods_PasswordVault.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549C931257E6FBF591D19025 /* Pods_PasswordVault.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,8 @@
 		952B74A91F292D5B00B378FF /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Group.swift; path = Model/Group.swift; sourceTree = "<group>"; };
 		952B74AC1F292EB000B378FF /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Util/Protocols.swift; sourceTree = "<group>"; };
 		952B74AE1F2936C800B378FF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = Scenes/Groups/GroupTableViewCell.swift; sourceTree = "<group>"; };
+		952B74B11F29478500B378FF /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTests.swift; path = Model/GroupTests.swift; sourceTree = "<group>"; };
+		952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewTests.swift; path = Controller/GroupsTableViewTests.swift; sourceTree = "<group>"; };
 		9531C6D51F29153900435143 /* PasswordVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9531C6D81F29153900435143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9531C6E01F29153900435143 /* PasswordVault.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordVault.xcdatamodel; sourceTree = "<group>"; };
@@ -50,7 +53,6 @@
 		9531C6E51F29153900435143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9531C6E71F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9531C6EC1F29153900435143 /* PasswordVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9531C6F01F29153900435143 /* PasswordVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVaultTests.swift; sourceTree = "<group>"; };
 		9531C6F21F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.release.xcconfig"; sourceTree = "<group>"; };
 		C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVaultTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -127,6 +129,22 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		952B74B01F29476900B378FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				952B74B11F29478500B378FF /* GroupTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		952B74B31F2947C400B378FF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		9531C6CC1F29153900435143 = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +184,8 @@
 		9531C6EF1F29153900435143 /* PasswordVaultTests */ = {
 			isa = PBXGroup;
 			children = (
-				9531C6F01F29153900435143 /* PasswordVaultTests.swift */,
+				952B74B31F2947C400B378FF /* Controller */,
+				952B74B01F29476900B378FF /* Model */,
 				9531C6F21F29153900435143 /* Info.plist */,
 			);
 			path = PasswordVaultTests;
@@ -401,7 +420,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9531C6F11F29153900435143 /* PasswordVaultTests.swift in Sources */,
+				952B74B21F29478500B378FF /* GroupTests.swift in Sources */,
+				952B74B51F2947E000B378FF /* GroupsTableViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

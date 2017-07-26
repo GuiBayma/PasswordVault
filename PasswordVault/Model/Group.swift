@@ -9,7 +9,7 @@
 import Foundation
 
 class Group: NSObject {
-    
+
     var name: String?
-    
+
 }

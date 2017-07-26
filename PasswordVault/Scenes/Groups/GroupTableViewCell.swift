@@ -13,25 +13,25 @@ import Reusable
 class GroupTableViewCell: UITableViewCell, Configurable, Reusable {
 
     // MARK: - Outlets
-    
+
     var label = UILabel()
 
     // MARK: - Initialization
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+
         self.addSubview(label)
-        
+
         configureConstraints()
     }
-    
+
     // MARK: - Constraints
-    
+
     func configureConstraints() {
         label.snp.makeConstraints { (maker) in
             maker.centerY.equalTo(self)
@@ -39,11 +39,11 @@ class GroupTableViewCell: UITableViewCell, Configurable, Reusable {
             maker.right.equalTo(self).offset(-20)
         }
     }
-    
+
     // MARK: - Configuration
-    
+
     func configure(_ group: Group) {
         label.text = group.name
     }
-    
+
 }

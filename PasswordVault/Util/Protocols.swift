@@ -9,8 +9,8 @@
 import UIKit
 
 protocol Configurable {
-    
-    associatedtype T
-    func configure(_: T)
-    
+
+    associatedtype ObjectType
+    func configure(_: ObjectType)
+
 }
