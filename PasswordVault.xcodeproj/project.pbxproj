@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		61E1A65F998632C18994EA34 /* Pods_PasswordVaultTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF1F2F4F303D0ADB9F306A3 /* Pods_PasswordVaultTests.framework */; };
+		9531C6D91F29153900435143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6D81F29153900435143 /* AppDelegate.swift */; };
+		9531C6E11F29153900435143 /* PasswordVault.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6DF1F29153900435143 /* PasswordVault.xcdatamodeld */; };
+		9531C6E31F29153900435143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E21F29153900435143 /* Assets.xcassets */; };
+		9531C6E61F29153900435143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E41F29153900435143 /* LaunchScreen.storyboard */; };
+		9531C6F11F29153900435143 /* PasswordVaultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6F01F29153900435143 /* PasswordVaultTests.swift */; };
+		F31890B8AD05DC49928D388F /* Pods_PasswordVault.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549C931257E6FBF591D19025 /* Pods_PasswordVault.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9531C6ED1F29153900435143 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9531C6CD1F29153900435143 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9531C6D41F29153900435143;
+			remoteInfo = PasswordVault;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		549C931257E6FBF591D19025 /* Pods_PasswordVault.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordVault.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DF1F2F4F303D0ADB9F306A3 /* Pods_PasswordVaultTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordVaultTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E82B3E3F0A100D8AA8FFB67 /* Pods-PasswordVaultTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVaultTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests.release.xcconfig"; sourceTree = "<group>"; };
+		8DC15C758A7BD059775C120B /* Pods-PasswordVault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.debug.xcconfig"; sourceTree = "<group>"; };
+		9531C6D51F29153900435143 /* PasswordVault.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PasswordVault.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9531C6D81F29153900435143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9531C6E01F29153900435143 /* PasswordVault.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PasswordVault.xcdatamodel; sourceTree = "<group>"; };
+		9531C6E21F29153900435143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9531C6E51F29153900435143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9531C6E71F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9531C6EC1F29153900435143 /* PasswordVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9531C6F01F29153900435143 /* PasswordVaultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordVaultTests.swift; sourceTree = "<group>"; };
+		9531C6F21F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.release.xcconfig"; sourceTree = "<group>"; };
+		C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVaultTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9531C6D21F29153900435143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F31890B8AD05DC49928D388F /* Pods_PasswordVault.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9531C6E91F29153900435143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61E1A65F998632C18994EA34 /* Pods_PasswordVaultTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		86462FB4DACC533B9F293D81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				549C931257E6FBF591D19025 /* Pods_PasswordVault.framework */,
+				5DF1F2F4F303D0ADB9F306A3 /* Pods_PasswordVaultTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9531C6CC1F29153900435143 = {
+			isa = PBXGroup;
+			children = (
+				9531C6D71F29153900435143 /* PasswordVault */,
+				9531C6EF1F29153900435143 /* PasswordVaultTests */,
+				9531C6D61F29153900435143 /* Products */,
+				EEB8DEF81EE6133C18800514 /* Pods */,
+				86462FB4DACC533B9F293D81 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9531C6D61F29153900435143 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9531C6D51F29153900435143 /* PasswordVault.app */,
+				9531C6EC1F29153900435143 /* PasswordVaultTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9531C6D71F29153900435143 /* PasswordVault */ = {
+			isa = PBXGroup;
+			children = (
+				9531C6D81F29153900435143 /* AppDelegate.swift */,
+				9531C6E21F29153900435143 /* Assets.xcassets */,
+				9531C6E41F29153900435143 /* LaunchScreen.storyboard */,
+				9531C6E71F29153900435143 /* Info.plist */,
+				9531C6DF1F29153900435143 /* PasswordVault.xcdatamodeld */,
+			);
+			path = PasswordVault;
+			sourceTree = "<group>";
+		};
+		9531C6EF1F29153900435143 /* PasswordVaultTests */ = {
+			isa = PBXGroup;
+			children = (
+				9531C6F01F29153900435143 /* PasswordVaultTests.swift */,
+				9531C6F21F29153900435143 /* Info.plist */,
+			);
+			path = PasswordVaultTests;
+			sourceTree = "<group>";
+		};
+		EEB8DEF81EE6133C18800514 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DC15C758A7BD059775C120B /* Pods-PasswordVault.debug.xcconfig */,
+				9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */,
+				C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */,
+				5E82B3E3F0A100D8AA8FFB67 /* Pods-PasswordVaultTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9531C6D41F29153900435143 /* PasswordVault */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9531C6F51F29153900435143 /* Build configuration list for PBXNativeTarget "PasswordVault" */;
+			buildPhases = (
+				1591BAB7066571345E44039F /* [CP] Check Pods Manifest.lock */,
+				9531C6D11F29153900435143 /* Sources */,
+				9531C6D21F29153900435143 /* Frameworks */,
+				9531C6D31F29153900435143 /* Resources */,
+				D021AB0DA8A6EBAA6F15A69F /* [CP] Embed Pods Frameworks */,
+				4086B2A466FA4B0B84BB714E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PasswordVault;
+			productName = PasswordVault;
+			productReference = 9531C6D51F29153900435143 /* PasswordVault.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9531C6EB1F29153900435143 /* PasswordVaultTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9531C6F81F29153900435143 /* Build configuration list for PBXNativeTarget "PasswordVaultTests" */;
+			buildPhases = (
+				CED0B275041AC4C7D1A17240 /* [CP] Check Pods Manifest.lock */,
+				9531C6E81F29153900435143 /* Sources */,
+				9531C6E91F29153900435143 /* Frameworks */,
+				9531C6EA1F29153900435143 /* Resources */,
+				6D744405A254EF20812120D7 /* [CP] Embed Pods Frameworks */,
+				67735F2F4AEB7A8547CFE098 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9531C6EE1F29153900435143 /* PBXTargetDependency */,
+			);
+			name = PasswordVaultTests;
+			productName = PasswordVaultTests;
+			productReference = 9531C6EC1F29153900435143 /* PasswordVaultTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9531C6CD1F29153900435143 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = Bayma;
+				TargetAttributes = {
+					9531C6D41F29153900435143 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LNGFCK45YW;
+						ProvisioningStyle = Automatic;
+					};
+					9531C6EB1F29153900435143 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LNGFCK45YW;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9531C6D41F29153900435143;
+					};
+				};
+			};
+			buildConfigurationList = 9531C6D01F29153900435143 /* Build configuration list for PBXProject "PasswordVault" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9531C6CC1F29153900435143;
+			productRefGroup = 9531C6D61F29153900435143 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9531C6D41F29153900435143 /* PasswordVault */,
+				9531C6EB1F29153900435143 /* PasswordVaultTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9531C6D31F29153900435143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9531C6E61F29153900435143 /* LaunchScreen.storyboard in Resources */,
+				9531C6E31F29153900435143 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9531C6EA1F29153900435143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1591BAB7066571345E44039F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4086B2A466FA4B0B84BB714E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67735F2F4AEB7A8547CFE098 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D744405A254EF20812120D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CED0B275041AC4C7D1A17240 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D021AB0DA8A6EBAA6F15A69F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9531C6D11F29153900435143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9531C6E11F29153900435143 /* PasswordVault.xcdatamodeld in Sources */,
+				9531C6D91F29153900435143 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9531C6E81F29153900435143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9531C6F11F29153900435143 /* PasswordVaultTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9531C6EE1F29153900435143 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9531C6D41F29153900435143 /* PasswordVault */;
+			targetProxy = 9531C6ED1F29153900435143 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9531C6E41F29153900435143 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9531C6E51F29153900435143 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9531C6F31F29153900435143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9531C6F41F29153900435143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9531C6F61F29153900435143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DC15C758A7BD059775C120B /* Pods-PasswordVault.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LNGFCK45YW;
+				INFOPLIST_FILE = PasswordVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bayma.PasswordVault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9531C6F71F29153900435143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LNGFCK45YW;
+				INFOPLIST_FILE = PasswordVault/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bayma.PasswordVault;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9531C6F91F29153900435143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LNGFCK45YW;
+				INFOPLIST_FILE = PasswordVaultTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bayma.PasswordVaultTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordVault.app/PasswordVault";
+			};
+			name = Debug;
+		};
+		9531C6FA1F29153900435143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E82B3E3F0A100D8AA8FFB67 /* Pods-PasswordVaultTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = LNGFCK45YW;
+				INFOPLIST_FILE = PasswordVaultTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.bayma.PasswordVaultTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PasswordVault.app/PasswordVault";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9531C6D01F29153900435143 /* Build configuration list for PBXProject "PasswordVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9531C6F31F29153900435143 /* Debug */,
+				9531C6F41F29153900435143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9531C6F51F29153900435143 /* Build configuration list for PBXNativeTarget "PasswordVault" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9531C6F61F29153900435143 /* Debug */,
+				9531C6F71F29153900435143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9531C6F81F29153900435143 /* Build configuration list for PBXNativeTarget "PasswordVaultTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9531C6F91F29153900435143 /* Debug */,
+				9531C6FA1F29153900435143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9531C6DF1F29153900435143 /* PasswordVault.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9531C6E01F29153900435143 /* PasswordVault.xcdatamodel */,
+			);
+			currentVersion = 9531C6E01F29153900435143 /* PasswordVault.xcdatamodel */;
+			path = PasswordVault.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9531C6CD1F29153900435143 /* Project object */;
+}
