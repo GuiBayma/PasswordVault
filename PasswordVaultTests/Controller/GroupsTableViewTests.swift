@@ -33,8 +33,8 @@ class GroupsTableViewTests: XCTestCase {
     }
 
     func testTableViewDelegate() {
-        XCTAssertTrue(groupsTableView?.conforms(to: UITableViewDelegate.self) ?? false, "view must conform to UITableViewDelegate")
         XCTAssertNotNil(tableView?.delegate, "table view delegate must not be nil")
+        XCTAssertTrue(groupsTableView?.conforms(to: UITableViewDelegate.self) ?? false, "view must conform to UITableViewDelegate")
     }
 
     func testNumberOfSections() {
@@ -43,6 +43,9 @@ class GroupsTableViewTests: XCTestCase {
 
     func testNumberOfRows() {
         XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 3, "table view must have 3 rows in section 0")
+        let group = Group()
+        groupsTableView?.addNewGroup(group)
+        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 4, "table view must have 4 rows in section 0")
     }
 
 }

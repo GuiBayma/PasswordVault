@@ -12,7 +12,7 @@ import Reusable
 
 class GroupTableViewCell: UITableViewCell, Configurable, Reusable {
 
-    // MARK: - Outlets
+    // MARK: - Components
 
     var label = UILabel()
 
@@ -27,12 +27,12 @@ class GroupTableViewCell: UITableViewCell, Configurable, Reusable {
 
         self.addSubview(label)
 
-        configureConstraints()
+        setConstraints()
     }
 
     // MARK: - Constraints
 
-    func configureConstraints() {
+    internal func setConstraints() {
         label.snp.makeConstraints { (maker) in
             maker.centerY.equalTo(self)
             maker.left.equalTo(self).offset(20)

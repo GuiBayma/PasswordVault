@@ -14,3 +14,18 @@ protocol Configurable {
     func configure(_: ObjectType)
 
 }
+
+protocol NewGroupDelegate: class {
+    func addNewGroup(_ group: Group)
+}
+
+// TODO: Think about this
+//protocol MemoryWarningComformable {
+//    func didReceiveMemoryWarning()
+//}
+//
+//extension UIViewController: MemoryWarningComformable {
+//    override func didReceiveMemoryWarning() {
+//        print("didReceiveMemoryWarning: \(String(describing: type(of: self)))\n")
+//    }
+//}

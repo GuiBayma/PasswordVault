@@ -8,7 +8,11 @@
 
 import UIKit
 
-class GroupsTableViewController: UIViewController, UITableViewDelegate {
+enum GroupsNavigation {
+    case newGroup
+}
+
+class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroupDelegate {
 
     // MARK: - Variables
 
@@ -33,6 +37,10 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         self.navigationItem.title = "Senhas"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                 target: self,
+                                                                 action: #selector(self.addGroup(_:)))
+
         tableView.register(cellType: GroupTableViewCell.self)
         tableView.delegate = self
         tableView.dataSource = dataSource
@@ -47,7 +55,6 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate {
         dataSource.setData([group1, group2, group3])
     }
 
-    // TODO: Think about this
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning: \(String(describing: type(of: self)))\n")
@@ -57,6 +64,31 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    // MARK: - New group delegate
+
+    func addNewGroup(_ group: Group) {
+        dataSource.addData(group)
+    }
+
+    // MARK: - Bar button items
+
+    func addGroup(_ sender: UIBarButtonItem) {
+        navigate(destination: .newGroup)
+    }
+
+    // MARK: - Navigation
+
+    func navigate(destination: GroupsNavigation) {
+        switch destination {
+        case .newGroup:
+            let nextView = AddGroupViewController()
+            nextView.delegate = self
+            let navController = UINavigationController(rootViewController: nextView)
+            self.present(navController, animated: true) {}
+            break
+        }
     }
 
 }
