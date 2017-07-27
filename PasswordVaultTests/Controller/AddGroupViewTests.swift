@@ -29,5 +29,17 @@ class AddGroupViewTests: XCTestCase {
     func testComformsToTextfieldDelegate() {
         XCTAssertTrue(addGroupView?.conforms(to: UITextFieldDelegate.self) ?? false, "view must conform to UITextFieldDelegate")
     }
-
+    
+    func testSaveNewGroupThroughTextfieldReturn() {
+        if let view = addGroupView?.view as? AddGroupView {
+            let textfield = view.labeledTextField.textField
+//            textfield.text = "Test"
+            
+            let shouldReturn = addGroupView?.textFieldShouldReturn(textfield)
+            XCTAssertTrue(shouldReturn ?? false)
+        } else {
+            XCTFail("view must be AddGroupView")
+        }
+    }
+    
 }

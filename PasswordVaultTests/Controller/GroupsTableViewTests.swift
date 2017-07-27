@@ -13,11 +13,13 @@ class GroupsTableViewTests: XCTestCase {
 
     var groupsTableView: GroupsTableViewController?
     var tableView: GenericTableView?
+    var dataSource: GroupsTableViewDataSource?
 
     override func setUp() {
         super.setUp()
         groupsTableView = GroupsTableViewController()
         tableView = groupsTableView?.view as? GenericTableView
+        dataSource = tableView?.dataSource as? GroupsTableViewDataSource
     }
 
     override func tearDown() {
@@ -25,11 +27,11 @@ class GroupsTableViewTests: XCTestCase {
     }
 
     func testTableViewLoaded() {
-        XCTAssertNotNil(groupsTableView?.view, "table view must not be nil")
+        XCTAssertNotNil(tableView, "table view must not be nil")
     }
 
     func testTableViewDataSource() {
-        XCTAssertNotNil(tableView?.dataSource, "table view data source must not be nil")
+        XCTAssertNotNil(dataSource, "table view data source must not be nil")
     }
 
     func testTableViewDelegate() {
@@ -43,9 +45,21 @@ class GroupsTableViewTests: XCTestCase {
 
     func testNumberOfRows() {
         XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 3, "table view must have 3 rows in section 0")
+    }
+    
+    func testAddNewGroup() {
         let group = Group()
         groupsTableView?.addNewGroup(group)
         XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 4, "table view must have 4 rows in section 0")
     }
 
+    func testSelectRow() {
+        XCTAssertTrue(tableView?.allowsSelection ?? false)
+    }
+    
+    func testDeleteGroup() {
+        dataSource?.tableView(tableView!, commit: .delete, forRowAt: IndexPath(item: 1, section: 0))
+        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 2, "table view must have 2 rows in section 0")
+    }
+    
 }

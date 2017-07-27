@@ -27,6 +27,13 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
         data.append(group)
         tableView?.reloadData()
     }
+    
+    // MARK: - Delete data
+    
+    func removeDataAt(_ indexPath: IndexPath) {
+        data.remove(at: indexPath.item)
+        tableView?.deleteRows(at: [indexPath], with: .automatic)
+    }
 
     // MARK: - Data Source
 
@@ -43,6 +50,16 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(for:indexPath) as GroupTableViewCell
         cell.configure(item)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            removeDataAt(indexPath)
+        }
     }
 
 }
