@@ -25,6 +25,11 @@ class GroupsTableViewTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
+    
+    // TODO: think about this
+//    func testLoadViewThroughStoryboard() {
+//        
+//    }
 
     func testTableViewLoaded() {
         XCTAssertNotNil(tableView, "table view must not be nil")
@@ -44,13 +49,13 @@ class GroupsTableViewTests: XCTestCase {
     }
 
     func testNumberOfRows() {
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 3, "table view must have 3 rows in section 0")
+        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 1, "table view must have 1 rows in section 0")
     }
     
     func testAddNewGroup() {
         let group = Group()
         groupsTableView?.addNewGroup(group)
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 4, "table view must have 4 rows in section 0")
+        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 2, "table view must have 2 rows in section 0")
     }
 
     func testSelectRow() {
@@ -58,8 +63,8 @@ class GroupsTableViewTests: XCTestCase {
     }
     
     func testDeleteGroup() {
-        dataSource?.tableView(tableView!, commit: .delete, forRowAt: IndexPath(item: 1, section: 0))
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 2, "table view must have 2 rows in section 0")
+        dataSource?.tableView(tableView!, commit: .delete, forRowAt: IndexPath(item: 0, section: 0))
+        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 0, "table view must have 0 rows in section 0")
     }
     
 }

@@ -8,7 +8,9 @@ target 'PasswordVault' do
   
   target 'PasswordVaultTests' do
     inherit! :search_paths
-
+    
+#    pod 'Quick', '~> 1.1'
+#    pod 'Nimble', '~> 7.0'
   end
 
 end

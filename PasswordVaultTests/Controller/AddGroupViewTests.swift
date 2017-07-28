@@ -33,7 +33,6 @@ class AddGroupViewTests: XCTestCase {
     func testSaveNewGroupThroughTextfieldReturn() {
         if let view = addGroupView?.view as? AddGroupView {
             let textfield = view.labeledTextField.textField
-//            textfield.text = "Test"
             
             let shouldReturn = addGroupView?.textFieldShouldReturn(textfield)
             XCTAssertTrue(shouldReturn ?? false)

@@ -20,6 +20,12 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
     func setData(_ data: [Group]) {
         self.data = data
     }
+    
+    // MARK: - Return data
+    
+    func getData(at index: Int) -> Group {
+        return data[index]
+    }
 
     // MARK: - Add data
 
