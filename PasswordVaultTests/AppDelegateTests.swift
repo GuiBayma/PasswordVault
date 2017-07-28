@@ -12,11 +12,11 @@ import Nimble
 @testable import PasswordVault
 
 class AppDelegateTests: QuickSpec {
-    
+
     override func spec() {
         describe("AppDelegate tests") {
-            
+
         }
     }
-    
+
 }

@@ -17,6 +17,8 @@
 		951A8DB51F2B731900BC0F22 /* GroupsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB41F2B731900BC0F22 /* GroupsTableViewControllerTests.swift */; };
 		951A8DB71F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB61F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift */; };
 		951A8DB91F2B734C00BC0F22 /* GroupsTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB81F2B734C00BC0F22 /* GroupsTableViewCellTests.swift */; };
+		951A8DBB1F2BE71100BC0F22 /* GenericTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DBA1F2BE71100BC0F22 /* GenericTableViewTests.swift */; };
+		951A8DBD1F2BE73000BC0F22 /* LabeledTextFieldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DBC1F2BE73000BC0F22 /* LabeledTextFieldTests.swift */; };
 		952B74A21F29256200B378FF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A11F29256200B378FF /* GenericTableView.swift */; };
 		952B74A41F2925CF00B378FF /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A31F2925CF00B378FF /* GroupsTableViewController.swift */; };
 		952B74A61F29268D00B378FF /* GroupsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A51F29268D00B378FF /* GroupsTableViewDataSource.swift */; };
@@ -63,6 +65,8 @@
 		951A8DB41F2B731900BC0F22 /* GroupsTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewControllerTests.swift; path = Scenes/Groups/GroupsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		951A8DB61F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewDataSourceTests.swift; path = Scenes/Groups/GroupsTableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		951A8DB81F2B734C00BC0F22 /* GroupsTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewCellTests.swift; path = Scenes/Groups/GroupsTableViewCellTests.swift; sourceTree = "<group>"; };
+		951A8DBA1F2BE71100BC0F22 /* GenericTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableViewTests.swift; path = Components/GenericTableViewTests.swift; sourceTree = "<group>"; };
+		951A8DBC1F2BE73000BC0F22 /* LabeledTextFieldTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabeledTextFieldTests.swift; path = Components/LabeledTextFieldTests.swift; sourceTree = "<group>"; };
 		952B74A11F29256200B378FF /* GenericTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableView.swift; path = Components/GenericTableView.swift; sourceTree = "<group>"; };
 		952B74A31F2925CF00B378FF /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Scenes/Groups/GroupsTableViewController.swift; sourceTree = "<group>"; };
 		952B74A51F29268D00B378FF /* GroupsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewDataSource.swift; path = Scenes/Groups/GroupsTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 		955B4B9B1F2A8DC2005E1DD5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				951A8DBA1F2BE71100BC0F22 /* GenericTableViewTests.swift */,
+				951A8DBC1F2BE73000BC0F22 /* LabeledTextFieldTests.swift */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -524,6 +530,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				951A8DAF1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift in Sources */,
+				951A8DBD1F2BE73000BC0F22 /* LabeledTextFieldTests.swift in Sources */,
+				951A8DBB1F2BE71100BC0F22 /* GenericTableViewTests.swift in Sources */,
 				951A8DB31F2B72F700BC0F22 /* ItemTableViewCellTests.swift in Sources */,
 				952B74B21F29478500B378FF /* GroupTests.swift in Sources */,
 				951A8DAB1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift in Sources */,

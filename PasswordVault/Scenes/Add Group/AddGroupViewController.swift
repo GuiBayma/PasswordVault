@@ -78,9 +78,9 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 let newGroup = Group()
                 newGroup.name = text
-//                self.delegate?.addNewGroup(newGroup)
+                self.delegate?.addNewGroup(newGroup)
                 dismiss(animated: true) {
-                    self.delegate?.addNewGroup(newGroup)
+//                    self.delegate?.addNewGroup(newGroup)
                 }
             }
         } else {
