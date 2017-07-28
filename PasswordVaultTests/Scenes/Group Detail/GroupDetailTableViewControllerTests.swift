@@ -1,15 +1,15 @@
 //
-//  GroupDetailTests.swift
+//  GroupDetailTableViewControllerTests.swift
 //  PasswordVault
 //
-//  Created by Guilherme Bayma on 7/27/17.
+//  Created by Guilherme Bayma on 7/28/17.
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
 import XCTest
 @testable import PasswordVault
 
-class GroupDetailTests: XCTestCase {
+class GroupDetailTableViewControllerTests: XCTestCase {
     
     var detailTableView: GroupDetailTableViewController?
     var tableView: GenericTableView?

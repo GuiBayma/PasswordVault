@@ -75,6 +75,7 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroup
 
     func addNewGroup(_ group: Group) {
         dataSource.addData(group)
+        
     }
 
     // MARK: - Bar button items

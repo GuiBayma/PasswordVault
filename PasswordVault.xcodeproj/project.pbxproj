@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		61E1A65F998632C18994EA34 /* Pods_PasswordVaultTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF1F2F4F303D0ADB9F306A3 /* Pods_PasswordVaultTests.framework */; };
+		951A8DA31F2B6CB400BC0F22 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DA21F2B6CB400BC0F22 /* AppDelegateTests.swift */; };
+		951A8DAB1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DAA1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift */; };
+		951A8DAD1F2B728E00BC0F22 /* AddGroupViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DAC1F2B728E00BC0F22 /* AddGroupViewTests.swift */; };
+		951A8DAF1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DAE1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift */; };
+		951A8DB11F2B72E200BC0F22 /* GroupDetailTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB01F2B72E200BC0F22 /* GroupDetailTableViewDataSourceTests.swift */; };
+		951A8DB31F2B72F700BC0F22 /* ItemTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB21F2B72F700BC0F22 /* ItemTableViewCellTests.swift */; };
+		951A8DB51F2B731900BC0F22 /* GroupsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB41F2B731900BC0F22 /* GroupsTableViewControllerTests.swift */; };
+		951A8DB71F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB61F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift */; };
+		951A8DB91F2B734C00BC0F22 /* GroupsTableViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951A8DB81F2B734C00BC0F22 /* GroupsTableViewCellTests.swift */; };
 		952B74A21F29256200B378FF /* GenericTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A11F29256200B378FF /* GenericTableView.swift */; };
 		952B74A41F2925CF00B378FF /* GroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A31F2925CF00B378FF /* GroupsTableViewController.swift */; };
 		952B74A61F29268D00B378FF /* GroupsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74A51F29268D00B378FF /* GroupsTableViewDataSource.swift */; };
@@ -15,7 +24,6 @@
 		952B74AD1F292EB000B378FF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74AC1F292EB000B378FF /* Protocols.swift */; };
 		952B74AF1F2936C800B378FF /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74AE1F2936C800B378FF /* GroupTableViewCell.swift */; };
 		952B74B21F29478500B378FF /* GroupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B11F29478500B378FF /* GroupTests.swift */; };
-		952B74B51F2947E000B378FF /* GroupsTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */; };
 		952B74B81F294ABF00B378FF /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B71F294ABF00B378FF /* AddGroupViewController.swift */; };
 		952B74BA1F294C1500B378FF /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74B91F294C1500B378FF /* LabeledTextField.swift */; };
 		952B74BC1F294C5B00B378FF /* AddGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952B74BB1F294C5B00B378FF /* AddGroupView.swift */; };
@@ -23,12 +31,10 @@
 		9531C6E11F29153900435143 /* PasswordVault.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9531C6DF1F29153900435143 /* PasswordVault.xcdatamodeld */; };
 		9531C6E31F29153900435143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E21F29153900435143 /* Assets.xcassets */; };
 		9531C6E61F29153900435143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9531C6E41F29153900435143 /* LaunchScreen.storyboard */; };
-		955B4B8A1F2A1D1A005E1DD5 /* AddGroupViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B891F2A1D1A005E1DD5 /* AddGroupViewTests.swift */; };
 		955B4B901F2A76D7005E1DD5 /* GroupDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B8F1F2A76D7005E1DD5 /* GroupDetailTableViewController.swift */; };
 		955B4B921F2A77EE005E1DD5 /* GroupDetailTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B911F2A77EE005E1DD5 /* GroupDetailTableViewDataSource.swift */; };
 		955B4B941F2A782C005E1DD5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B931F2A782C005E1DD5 /* Item.swift */; };
 		955B4B961F2A78AE005E1DD5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B951F2A78AE005E1DD5 /* ItemTableViewCell.swift */; };
-		955B4B981F2A8DAB005E1DD5 /* GroupDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B971F2A8DAB005E1DD5 /* GroupDetailTests.swift */; };
 		955B4B9A1F2A8DBA005E1DD5 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */; };
 		F31890B8AD05DC49928D388F /* Pods_PasswordVault.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549C931257E6FBF591D19025 /* Pods_PasswordVault.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +54,15 @@
 		5DF1F2F4F303D0ADB9F306A3 /* Pods_PasswordVaultTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PasswordVaultTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E82B3E3F0A100D8AA8FFB67 /* Pods-PasswordVaultTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVaultTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests.release.xcconfig"; sourceTree = "<group>"; };
 		8DC15C758A7BD059775C120B /* Pods-PasswordVault.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.debug.xcconfig"; sourceTree = "<group>"; };
+		951A8DA21F2B6CB400BC0F22 /* AppDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
+		951A8DAA1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewControllerTests.swift; path = "Scenes/Add Group/AddGroupViewControllerTests.swift"; sourceTree = "<group>"; };
+		951A8DAC1F2B728E00BC0F22 /* AddGroupViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewTests.swift; path = "Scenes/Add Group/AddGroupViewTests.swift"; sourceTree = "<group>"; };
+		951A8DAE1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetailTableViewControllerTests.swift; path = "Scenes/Group Detail/GroupDetailTableViewControllerTests.swift"; sourceTree = "<group>"; };
+		951A8DB01F2B72E200BC0F22 /* GroupDetailTableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetailTableViewDataSourceTests.swift; path = "Scenes/Group Detail/GroupDetailTableViewDataSourceTests.swift"; sourceTree = "<group>"; };
+		951A8DB21F2B72F700BC0F22 /* ItemTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCellTests.swift; path = "Scenes/Group Detail/ItemTableViewCellTests.swift"; sourceTree = "<group>"; };
+		951A8DB41F2B731900BC0F22 /* GroupsTableViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewControllerTests.swift; path = Scenes/Groups/GroupsTableViewControllerTests.swift; sourceTree = "<group>"; };
+		951A8DB61F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewDataSourceTests.swift; path = Scenes/Groups/GroupsTableViewDataSourceTests.swift; sourceTree = "<group>"; };
+		951A8DB81F2B734C00BC0F22 /* GroupsTableViewCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewCellTests.swift; path = Scenes/Groups/GroupsTableViewCellTests.swift; sourceTree = "<group>"; };
 		952B74A11F29256200B378FF /* GenericTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericTableView.swift; path = Components/GenericTableView.swift; sourceTree = "<group>"; };
 		952B74A31F2925CF00B378FF /* GroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewController.swift; path = Scenes/Groups/GroupsTableViewController.swift; sourceTree = "<group>"; };
 		952B74A51F29268D00B378FF /* GroupsTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewDataSource.swift; path = Scenes/Groups/GroupsTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -55,7 +70,6 @@
 		952B74AC1F292EB000B378FF /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Util/Protocols.swift; sourceTree = "<group>"; };
 		952B74AE1F2936C800B378FF /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTableViewCell.swift; path = Scenes/Groups/GroupTableViewCell.swift; sourceTree = "<group>"; };
 		952B74B11F29478500B378FF /* GroupTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupTests.swift; path = Model/GroupTests.swift; sourceTree = "<group>"; };
-		952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupsTableViewTests.swift; path = Controller/GroupsTableViewTests.swift; sourceTree = "<group>"; };
 		952B74B71F294ABF00B378FF /* AddGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewController.swift; path = "Scenes/Add Group/AddGroupViewController.swift"; sourceTree = "<group>"; };
 		952B74B91F294C1500B378FF /* LabeledTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LabeledTextField.swift; path = Components/LabeledTextField.swift; sourceTree = "<group>"; };
 		952B74BB1F294C5B00B378FF /* AddGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupView.swift; path = "Scenes/Add Group/AddGroupView.swift"; sourceTree = "<group>"; };
@@ -67,12 +81,10 @@
 		9531C6E71F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9531C6EC1F29153900435143 /* PasswordVaultTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PasswordVaultTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9531C6F21F29153900435143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		955B4B891F2A1D1A005E1DD5 /* AddGroupViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddGroupViewTests.swift; path = Controller/AddGroupViewTests.swift; sourceTree = "<group>"; };
 		955B4B8F1F2A76D7005E1DD5 /* GroupDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetailTableViewController.swift; path = "Scenes/Group Detail/GroupDetailTableViewController.swift"; sourceTree = "<group>"; };
 		955B4B911F2A77EE005E1DD5 /* GroupDetailTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetailTableViewDataSource.swift; path = "Scenes/Group Detail/GroupDetailTableViewDataSource.swift"; sourceTree = "<group>"; };
 		955B4B931F2A782C005E1DD5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		955B4B951F2A78AE005E1DD5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = "Scenes/Group Detail/ItemTableViewCell.swift"; sourceTree = "<group>"; };
-		955B4B971F2A8DAB005E1DD5 /* GroupDetailTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GroupDetailTests.swift; path = Controller/GroupDetailTests.swift; sourceTree = "<group>"; };
 		955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTests.swift; path = Model/ItemTests.swift; sourceTree = "<group>"; };
 		9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.release.xcconfig"; sourceTree = "<group>"; };
 		C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVaultTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVaultTests/Pods-PasswordVaultTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,12 +119,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		951A8DA41F2B6D7600BC0F22 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				951A8DA51F2B713900BC0F22 /* Add Group */,
+				951A8DA71F2B714600BC0F22 /* Group Detail */,
+				951A8DA61F2B714000BC0F22 /* Groups */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		951A8DA51F2B713900BC0F22 /* Add Group */ = {
+			isa = PBXGroup;
+			children = (
+				951A8DAA1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift */,
+				951A8DAC1F2B728E00BC0F22 /* AddGroupViewTests.swift */,
+			);
+			name = "Add Group";
+			sourceTree = "<group>";
+		};
+		951A8DA61F2B714000BC0F22 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				951A8DB41F2B731900BC0F22 /* GroupsTableViewControllerTests.swift */,
+				951A8DB61F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift */,
+				951A8DB81F2B734C00BC0F22 /* GroupsTableViewCellTests.swift */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		951A8DA71F2B714600BC0F22 /* Group Detail */ = {
+			isa = PBXGroup;
+			children = (
+				951A8DAE1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift */,
+				951A8DB01F2B72E200BC0F22 /* GroupDetailTableViewDataSourceTests.swift */,
+				951A8DB21F2B72F700BC0F22 /* ItemTableViewCellTests.swift */,
+			);
+			name = "Group Detail";
+			sourceTree = "<group>";
+		};
 		952B749C1F29240F00B378FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				952B74B61F294A6500B378FF /* Add Group */,
-				952B74A01F29245B00B378FF /* Groups */,
 				955B4B8E1F2A70B1005E1DD5 /* Group Detail */,
+				952B74A01F29245B00B378FF /* Groups */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -160,16 +211,6 @@
 				955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		952B74B31F2947C400B378FF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				952B74B41F2947E000B378FF /* GroupsTableViewTests.swift */,
-				955B4B891F2A1D1A005E1DD5 /* AddGroupViewTests.swift */,
-				955B4B971F2A8DAB005E1DD5 /* GroupDetailTests.swift */,
-			);
-			name = Controller;
 			sourceTree = "<group>";
 		};
 		952B74B61F294A6500B378FF /* Add Group */ = {
@@ -220,9 +261,10 @@
 		9531C6EF1F29153900435143 /* PasswordVaultTests */ = {
 			isa = PBXGroup;
 			children = (
+				951A8DA21F2B6CB400BC0F22 /* AppDelegateTests.swift */,
 				955B4B9B1F2A8DC2005E1DD5 /* Components */,
-				952B74B31F2947C400B378FF /* Controller */,
 				952B74B01F29476900B378FF /* Model */,
+				951A8DA41F2B6D7600BC0F22 /* Scenes */,
 				9531C6F21F29153900435143 /* Info.plist */,
 			);
 			path = PasswordVaultTests;
@@ -481,11 +523,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				955B4B981F2A8DAB005E1DD5 /* GroupDetailTests.swift in Sources */,
+				951A8DAF1F2B72CD00BC0F22 /* GroupDetailTableViewControllerTests.swift in Sources */,
+				951A8DB31F2B72F700BC0F22 /* ItemTableViewCellTests.swift in Sources */,
 				952B74B21F29478500B378FF /* GroupTests.swift in Sources */,
-				952B74B51F2947E000B378FF /* GroupsTableViewTests.swift in Sources */,
-				955B4B8A1F2A1D1A005E1DD5 /* AddGroupViewTests.swift in Sources */,
+				951A8DAB1F2B727E00BC0F22 /* AddGroupViewControllerTests.swift in Sources */,
+				951A8DB51F2B731900BC0F22 /* GroupsTableViewControllerTests.swift in Sources */,
+				951A8DB11F2B72E200BC0F22 /* GroupDetailTableViewDataSourceTests.swift in Sources */,
+				951A8DA31F2B6CB400BC0F22 /* AppDelegateTests.swift in Sources */,
+				951A8DB71F2B732B00BC0F22 /* GroupsTableViewDataSourceTests.swift in Sources */,
+				951A8DAD1F2B728E00BC0F22 /* AddGroupViewTests.swift in Sources */,
 				955B4B9A1F2A8DBA005E1DD5 /* ItemTests.swift in Sources */,
+				951A8DB91F2B734C00BC0F22 /* GroupsTableViewCellTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8DC15C758A7BD059775C120B /* Pods-PasswordVault.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LNGFCK45YW;
 				INFOPLIST_FILE = PasswordVault/Info.plist;
@@ -625,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LNGFCK45YW;
 				INFOPLIST_FILE = PasswordVault/Info.plist;
@@ -640,7 +690,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C011C1E2084C2740E927697F /* Pods-PasswordVaultTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = LNGFCK45YW;
 				INFOPLIST_FILE = PasswordVaultTests/Info.plist;
@@ -656,7 +706,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E82B3E3F0A100D8AA8FFB67 /* Pods-PasswordVaultTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = LNGFCK45YW;
 				INFOPLIST_FILE = PasswordVaultTests/Info.plist;
