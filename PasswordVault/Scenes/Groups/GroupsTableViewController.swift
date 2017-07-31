@@ -73,9 +73,9 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroup
 
     // MARK: - New group delegate
 
-    func addNewGroup(_ group: Group) {
-        dataSource.addData(group)
-
+    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group) {
+        self.dataSource.addData(group)
+        viewController.dismiss(animated: true) {}
     }
 
     // MARK: - Bar button items

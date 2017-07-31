@@ -26,11 +26,13 @@ class LabeledTextFieldTests: QuickSpec {
                 expect(labeledTextField).toNot(beNil())
             }
 
-            it("should not load through storyboard") {
-                expect {
-                    _ = LabeledTextField(coder: NSCoder())
-                    }.to(throwAssertion())
-            }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = LabeledTextField(coder: NSCoder())
+                        }.to(throwAssertion())
+                }
+            #endif
 
         }
 

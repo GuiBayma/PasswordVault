@@ -26,11 +26,13 @@ class GenericTableViewTests: QuickSpec {
                 expect(tableView).toNot(beNil())
             }
 
-            it("should not load through storyboard") {
-                expect {
-                    _ = GenericTableView(coder: NSCoder())
-                    }.to(throwAssertion())
-            }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = GenericTableView(coder: NSCoder())
+                        }.to(throwAssertion())
+                }
+            #endif
 
         }
 

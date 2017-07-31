@@ -16,8 +16,9 @@ class NewGroupDelegateMock: NewGroupDelegate {
 
     var group: Group?
 
-    func addNewGroup(_ group: Group) {
+    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group) {
         self.group = group
+        viewController.dismiss(animated: true) {}
     }
 }
 
@@ -47,11 +48,13 @@ class AddGroupViewControllerTests: QuickSpec {
                 expect(addGroupController).toNot(beNil())
             }
 
-            it("should not load through storyboard") {
-                expect {
-                    _ = AddGroupViewController(coder: NSCoder())
-                }.to(throwAssertion())
-            }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = AddGroupViewController(coder: NSCoder())
+                        }.to(throwAssertion())
+                }
+            #endif
 
             it("should conform to UITextFieldDelegate") {
                 expect(addGroupController?.conforms(to: UITextFieldDelegate.self)).to(beTrue())

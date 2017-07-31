@@ -26,11 +26,6 @@ class GroupsTableViewControllerTests: XCTestCase {
         super.tearDown()
     }
 
-    // TODO: think about this
-    //    func testLoadViewThroughStoryboard() {
-    //
-    //    }
-
     func testTableViewLoaded() {
         XCTAssertNotNil(tableView, "table view must not be nil")
     }
@@ -54,7 +49,7 @@ class GroupsTableViewControllerTests: XCTestCase {
 
     func testAddNewGroup() {
         let group = Group()
-        groupsTableView?.addNewGroup(group)
+        groupsTableView?.addNewGroupAndDismiss(UIViewController(), group: group)
         XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 2, "table view must have 2 rows in section 0")
     }
 

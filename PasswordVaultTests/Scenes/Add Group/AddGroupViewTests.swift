@@ -41,11 +41,13 @@ class AddGroupViewTests: QuickSpec {
                 expect(addGroupView).toNot(beNil())
             }
 
-            it("should not load through storyboard") {
-                expect {
-                    _ = AddGroupView(coder: NSCoder())
-                    }.to(throwAssertion())
-            }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = AddGroupView(coder: NSCoder())
+                        }.to(throwAssertion())
+                }
+            #endif
 
             it("should return true on button action") {
                 addGroupView?.button.sendActions(for: .touchUpInside)

@@ -57,19 +57,19 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Text field delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        saveNewGroup()
+        saveNewGroupAndDismiss()
         return true
     }
 
     // MARK: - Button action
 
     func donePressed() {
-        saveNewGroup()
+        saveNewGroupAndDismiss()
     }
 
     // MARK: - Save new group
 
-    func saveNewGroup() {
+    func saveNewGroupAndDismiss() {
         if let text = addGroupView.labeledTextField.textField.text {
             addGroupView.labeledTextField.textField.resignFirstResponder()
 
@@ -78,10 +78,7 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
             } else {
                 let newGroup = Group()
                 newGroup.name = text
-                self.delegate?.addNewGroup(newGroup)
-                dismiss(animated: true) {
-//                    self.delegate?.addNewGroup(newGroup)
-                }
+                self.delegate?.addNewGroupAndDismiss(self, group: newGroup)
             }
         } else {
             fatalError("\(String(describing: type(of: self))): Error retrieving text from textfield")

@@ -16,7 +16,7 @@ protocol Configurable {
 }
 
 protocol NewGroupDelegate: class {
-    func addNewGroup(_ group: Group)
+    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group)
 }
 
 // TODO: Think about this
