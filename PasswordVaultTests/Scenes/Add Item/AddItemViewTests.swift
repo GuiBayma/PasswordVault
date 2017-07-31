@@ -1,8 +1,8 @@
 //
-//  AddGroupViewTests.swift
+//  AddItemViewTests.swift
 //  PasswordVault
 //
-//  Created by Guilherme Bayma on 7/28/17.
+//  Created by Guilherme Bayma on 7/31/17.
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
@@ -12,27 +12,17 @@ import Nimble
 
 @testable import PasswordVault
 
-class ButtonActionMock {
-
-    var wasPressed = false
-
-    func buttonAction() {
-        wasPressed = true
-    }
-
-}
-
-class AddGroupViewTests: QuickSpec {
+class AddItemViewTests: QuickSpec {
 
     override func spec() {
 
-        describe("AddGroupViewTests tests") {
+        describe("AddItemView tests") {
 
-            var sut: AddGroupView?
+            var sut: AddItemView?
             let buttonActionMock = ButtonActionMock()
 
             beforeEach {
-                sut = AddGroupView()
+                sut = AddItemView()
                 sut?.buttonAction = buttonActionMock.buttonAction
             }
 
@@ -44,7 +34,7 @@ class AddGroupViewTests: QuickSpec {
                 it("should not load through storyboard") {
                     expect {
                         _ = AddGroupView(coder: NSCoder())
-                    }.to(throwAssertion())
+                        }.to(throwAssertion())
                 }
             #endif
 

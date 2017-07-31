@@ -12,12 +12,14 @@ import Nimble
 
 @testable import PasswordVault
 
-class NewGroupDelegateMock: NewGroupDelegate {
+class NewGroupDelegateMock: NewDataDelegate {
 
     var group: Group?
 
-    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group) {
-        self.group = group
+    func addNewDataAndDismiss(_ viewController: UIViewController, data: NSObject) {
+        if let group = data as? Group {
+            self.group = group
+        }
         viewController.dismiss(animated: true) {}
     }
 }

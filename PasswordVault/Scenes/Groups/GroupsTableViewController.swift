@@ -13,7 +13,7 @@ enum GroupsNavigation {
     case groupDetail
 }
 
-class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroupDelegate {
+class GroupsTableViewController: UIViewController, UITableViewDelegate, NewDataDelegate {
 
     // MARK: - Variables
 
@@ -58,11 +58,6 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroup
         dataSource.setData([group1])
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("didReceiveMemoryWarning: \(String(describing: type(of: self)))\n")
-    }
-
     // MARK: - Table view delegte
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -73,8 +68,10 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate, NewGroup
 
     // MARK: - New group delegate
 
-    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group) {
-        self.dataSource.addData(group)
+    func addNewDataAndDismiss(_ viewController: UIViewController, data: NSObject) {
+        if let group = data as? Group {
+            self.dataSource.addData(group)
+        }
         viewController.dismiss(animated: true) {}
     }
 

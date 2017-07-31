@@ -13,7 +13,7 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Variables
 
     fileprivate let addGroupView = AddGroupView()
-    weak var delegate: NewGroupDelegate?
+    weak var delegate: NewDataDelegate?
 
     // MARK: - Initializing
 
@@ -43,11 +43,6 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
         addGroupView.buttonAction = donePressed
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("didReceiveMemoryWarning: \(String(describing: type(of: self)))\n")
-    }
-
     // MARK: - Bar button items
 
     func cancelPressed(_ sender: UIBarButtonItem) {
@@ -57,6 +52,7 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Text field delegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         saveNewGroupAndDismiss()
         return true
     }
@@ -64,24 +60,24 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
     // MARK: - Button action
 
     func donePressed() {
+        addGroupView.labeledTextField.textField.resignFirstResponder()
         saveNewGroupAndDismiss()
     }
 
     // MARK: - Save new group
 
     func saveNewGroupAndDismiss() {
-        if let text = addGroupView.labeledTextField.textField.text {
-            addGroupView.labeledTextField.textField.resignFirstResponder()
-
-            if text == "" {
-                dismiss(animated: true) {}
-            } else {
-                let newGroup = Group()
-                newGroup.name = text
-                self.delegate?.addNewGroupAndDismiss(self, group: newGroup)
-            }
-        } else {
+        guard
+            let text = addGroupView.labeledTextField.textField.text
+        else {
             fatalError("\(String(describing: type(of: self))): Error retrieving text from textfield")
+        }
+        if text == "" {
+            dismiss(animated: true) {}
+        } else {
+            let newGroup = Group()
+            newGroup.name = text
+            self.delegate?.addNewDataAndDismiss(self, data: newGroup)
         }
     }
 

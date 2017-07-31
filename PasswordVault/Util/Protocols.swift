@@ -15,8 +15,8 @@ protocol Configurable {
 
 }
 
-protocol NewGroupDelegate: class {
-    func addNewGroupAndDismiss(_ viewController: UIViewController, group: Group)
+protocol NewDataDelegate: class {
+    func addNewDataAndDismiss(_ viewController: UIViewController, data: NSObject)
 }
 
 // TODO: Think about this

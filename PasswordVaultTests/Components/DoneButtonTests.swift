@@ -1,8 +1,8 @@
 //
-//  LabeledTextFieldTests.swift
+//  DoneButtonTests.swift
 //  PasswordVault
 //
-//  Created by Guilherme Bayma on 7/28/17.
+//  Created by Guilherme Bayma on 7/31/17.
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
@@ -12,16 +12,16 @@ import Nimble
 
 @testable import PasswordVault
 
-class LabeledTextFieldTests: QuickSpec {
+class DoneButtonTests: QuickSpec {
 
     override func spec() {
 
-        describe("LabeledTextField tests") {
+        describe("DoneButton tests") {
 
-            var sut: LabeledTextField?
+            var sut: DoneButton?
 
             beforeEach {
-                sut = LabeledTextField()
+                sut = DoneButton()
             }
 
             it("should not be nil") {
@@ -31,7 +31,7 @@ class LabeledTextFieldTests: QuickSpec {
             #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
                 it("should not load through storyboard") {
                     expect {
-                        _ = LabeledTextField(coder: NSCoder())
+                        _ = DoneButton(coder: NSCoder())
                     }.to(throwAssertion())
                 }
             #endif

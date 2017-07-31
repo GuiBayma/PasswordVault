@@ -8,7 +8,11 @@
 
 import UIKit
 
-class GroupDetailTableViewController: UIViewController, UITableViewDelegate {
+enum ItemsNavigation {
+    case newItem
+}
+
+class GroupDetailTableViewController: UIViewController, UITableViewDelegate, NewDataDelegate {
 
     // MARK: - Variables
 
@@ -36,6 +40,9 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
 
         self.navigationItem.title = group?.name
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
+                                                                 target: self,
+                                                                 action: #selector(self.addItem(_:)))
 
         tableView.register(cellType: ItemTableViewCell.self)
         tableView.delegate = self
@@ -45,17 +52,37 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate {
         dataSource.setData(group?.items ?? [])
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        print("didReceiveMemoryWarning: \(String(describing: type(of: self)))\n")
-    }
-
     // MARK: - Table view delegte
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+    // MARK: - New data delegate
+
+    func addNewDataAndDismiss(_ viewController: UIViewController, data: NSObject) {
+        if let item = data as? Item {
+            dataSource.addData(item)
+        }
+        viewController.dismiss(animated: true) {}
+    }
+
+    // MARK: - Bar button items
+
+    func addItem(_ sender: UIBarButtonItem) {
+        navigate(destination: .newItem, item: nil)
+    }
+
     // MARK: - Navigation
+
+    func navigate(destination: ItemsNavigation, item: Item?) {
+        switch destination {
+        case .newItem:
+            let nextView = AddItemViewController()
+            nextView.delegate = self
+            let navController = UINavigationController(rootViewController: nextView)
+            self.present(navController, animated: true) {}
+        }
+    }
 
 }

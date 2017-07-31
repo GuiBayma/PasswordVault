@@ -14,7 +14,7 @@ class AddGroupView: UIView {
     // MARK: - Components
 
     let labeledTextField = LabeledTextField()
-    let button           = UIButton()
+    let button           = DoneButton()
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -47,12 +47,7 @@ class AddGroupView: UIView {
         button.snp.makeConstraints { (maker) in
             maker.top.equalTo(labeledTextField.snp.bottom).offset(10)
             maker.trailing.equalTo(labeledTextField.snp.trailing)
-            maker.height.equalTo(40)
-            maker.width.equalTo(100)
         }
-        button.backgroundColor = .blue
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Concluído", for: .normal)
         button.addTarget(self, action: #selector(registerButtonTouched(_:)), for: .touchUpInside)
     }
 
