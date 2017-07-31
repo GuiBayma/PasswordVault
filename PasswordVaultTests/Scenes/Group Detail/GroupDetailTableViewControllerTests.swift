@@ -6,55 +6,46 @@
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Quick
+import Nimble
+
 @testable import PasswordVault
 
-class GroupDetailTableViewControllerTests: XCTestCase {
+class GroupDetailTableViewControllerTests: QuickSpec {
 
-    var detailTableView: GroupDetailTableViewController?
-    var tableView: GenericTableView?
-    var dataSource: GroupDetailTableViewDataSource?
+    override func spec() {
 
-    override func setUp() {
-        super.setUp()
-        detailTableView = GroupDetailTableViewController()
+        describe("GroupDetailTableViewController tests") {
 
-        let group = Group()
-        let item = Item()
-        group.items = [item]
-        detailTableView?.group = group
+            var sut: GroupDetailTableViewController?
 
-        tableView = detailTableView?.view as? GenericTableView
-        dataSource = tableView?.dataSource as? GroupDetailTableViewDataSource
-    }
+            beforeEach {
+                sut = GroupDetailTableViewController()
 
-    override func tearDown() {
-        super.tearDown()
-    }
+                let group = Group()
+                let item = Item()
+                group.items = [item]
+                sut?.group = group
+            }
 
-    func testTableViewLoaded() {
-        XCTAssertNotNil(tableView, "table view must not be nil")
-    }
+            it("should not be nil") {
+                expect(sut).toNot(beNil())
+            }
 
-    func testTableViewDataSource() {
-        XCTAssertNotNil(dataSource, "table view data source must not be nil")
-    }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = GroupDetailTableViewController(coder: NSCoder())
+                    }.to(throwAssertion())
+                }
+            #endif
 
-    func testTableViewDelegate() {
-        XCTAssertNotNil(tableView?.delegate, "table view delegate must not be nil")
-        XCTAssertTrue(detailTableView?.conforms(to: UITableViewDelegate.self) ?? false, "view must conform to UITableViewDelegate")
-    }
+            it("should conform to UITableViewDelegate") {
+                expect(sut?.conforms(to: UITableViewDelegate.self)).to(beTrue())
+            }
+        }
 
-    func testNumberOfSections() {
-        XCTAssertTrue(tableView?.numberOfSections == 1, "table view must have 1 section")
-    }
-
-    func testNumberOfRows() {
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 1, "table view must have 1 rows in section 0")
-    }
-
-    func testSelectRow() {
-        XCTAssertTrue(tableView?.allowsSelection ?? false)
     }
 
 }

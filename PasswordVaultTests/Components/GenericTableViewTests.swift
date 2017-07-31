@@ -16,21 +16,21 @@ class GenericTableViewTests: QuickSpec {
 
     override func spec() {
 
-        var tableView: GenericTableView?
+        var sut: GenericTableView?
 
-        describe("LabeledTextField tests") {
+        describe("GenericTableView tests") {
 
-            tableView = GenericTableView()
+            sut = GenericTableView()
 
             it("should not be nil") {
-                expect(tableView).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
                 it("should not load through storyboard") {
                     expect {
                         _ = GenericTableView(coder: NSCoder())
-                        }.to(throwAssertion())
+                    }.to(throwAssertion())
                 }
             #endif
 

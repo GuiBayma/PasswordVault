@@ -16,21 +16,21 @@ class LabeledTextFieldTests: QuickSpec {
 
     override func spec() {
 
-        var labeledTextField: LabeledTextField?
+        var sut: LabeledTextField?
 
         describe("LabeledTextField tests") {
 
-            labeledTextField = LabeledTextField()
+            sut = LabeledTextField()
 
             it("should not be nil") {
-                expect(labeledTextField).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
                 it("should not load through storyboard") {
                     expect {
                         _ = LabeledTextField(coder: NSCoder())
-                        }.to(throwAssertion())
+                    }.to(throwAssertion())
                 }
             #endif
 

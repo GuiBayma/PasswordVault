@@ -28,15 +28,15 @@ class AddGroupViewControllerTests: QuickSpec {
 
         describe("AddGroupViewController tests") {
 
-            var addGroupController: AddGroupViewController?
+            var sut: AddGroupViewController?
             var newGroupDelegateMock: NewGroupDelegateMock?
 
             beforeEach {
-                addGroupController = AddGroupViewController()
+                sut = AddGroupViewController()
                 newGroupDelegateMock = NewGroupDelegateMock()
-                addGroupController?.delegate = newGroupDelegateMock
+                sut?.delegate = newGroupDelegateMock
 
-                if let view = addGroupController?.view as? AddGroupView {
+                if let view = sut?.view as? AddGroupView {
                     let textField = view.labeledTextField.textField
                     textField.text = "New Group"
                 } else {
@@ -45,47 +45,42 @@ class AddGroupViewControllerTests: QuickSpec {
             }
 
             it("should not be nil") {
-                expect(addGroupController).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
                 it("should not load through storyboard") {
                     expect {
                         _ = AddGroupViewController(coder: NSCoder())
-                        }.to(throwAssertion())
+                    }.to(throwAssertion())
                 }
             #endif
 
             it("should conform to UITextFieldDelegate") {
-                expect(addGroupController?.conforms(to: UITextFieldDelegate.self)).to(beTrue())
+                expect(sut?.conforms(to: UITextFieldDelegate.self)).to(beTrue())
             }
 
             it("should dismiss and create new group through text field return") {
                 guard
-                    let textField = (addGroupController?.view as? AddGroupView)?.labeledTextField.textField
+                    let textField = (sut?.view as? AddGroupView)?.labeledTextField.textField
                 else {
                     fail("textfield should not be nil")
                     return
                 }
-                expect(addGroupController?.textFieldShouldReturn(textField)).to(beTrue())
-
-//                waitUntil { done in
-//                    expect(addGroupController?.isBeingDismissed).toEventually(beTrue())
-//                    done()
-//                }
+                expect(sut?.textFieldShouldReturn(textField)).to(beTrue())
                 expect(newGroupDelegateMock?.group?.name) == "New Group"
             }
 
             it("should dismiss and create new group through button action") {
-                addGroupController?.donePressed()
+                sut?.donePressed()
                 expect(newGroupDelegateMock?.group?.name) == "New Group"
             }
 
             it("should dismiss and not create new group for empty string") {
-                if let view = addGroupController?.view as? AddGroupView {
+                if let view = sut?.view as? AddGroupView {
                     let textField = view.labeledTextField.textField
                     textField.text = ""
-                    expect(addGroupController?.textFieldShouldReturn(textField)).to(beTrue())
+                    expect(sut?.textFieldShouldReturn(textField)).to(beTrue())
                     expect(newGroupDelegateMock?.group).to(beNil())
                 } else {
                     fail("view should be AddGroupView")

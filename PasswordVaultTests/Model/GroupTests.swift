@@ -16,28 +16,28 @@ class GroupTests: QuickSpec {
 
     override func spec() {
 
-        var group: Group?
+        var sut: Group?
 
         describe("Group tests") {
 
             beforeEach {
-                group = Group()
-                group?.name = "Group 1"
+                sut = Group()
+                sut?.name = "Group 1"
 
                 let item = Item()
-                group?.items = [item]
+                sut?.items = [item]
             }
 
             it("should not be nil") {
-                expect(group).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             it("should return 'Group 1' as the name of the group") {
-                expect(group?.name) == "Group 1"
+                expect(sut?.name) == "Group 1"
             }
 
             it("should contain one item") {
-                expect(group?.items?.count) == 1
+                expect(sut?.items?.count) == 1
             }
 
         }

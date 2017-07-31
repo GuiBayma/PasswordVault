@@ -19,6 +19,7 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
 
     func setData(_ data: [Group]) {
         self.data = data
+        tableView?.reloadData()
     }
 
     // MARK: - Return data
@@ -36,7 +37,7 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
 
     // MARK: - Delete data
 
-    func removeDataAt(_ indexPath: IndexPath) {
+    fileprivate func removeDataAt(_ indexPath: IndexPath) {
         data.remove(at: indexPath.item)
         tableView?.deleteRows(at: [indexPath], with: .automatic)
     }

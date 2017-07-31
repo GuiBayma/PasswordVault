@@ -12,6 +12,7 @@ target 'PasswordVault' do
     
     pod 'Quick', '~> 1.1'
     pod 'Nimble', '~> 7.0'
+    pod 'Reusable', '~> 4.0'
   end
 
 end

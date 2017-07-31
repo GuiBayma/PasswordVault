@@ -19,6 +19,7 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
 
     func setData(_ data: [Item]) {
         self.data = data
+        tableView?.reloadData()
     }
 
     // MARK: - Data Source

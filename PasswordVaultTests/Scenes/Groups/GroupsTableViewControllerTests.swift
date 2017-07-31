@@ -6,60 +6,42 @@
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Quick
+import Nimble
+
 @testable import PasswordVault
 
-class GroupsTableViewControllerTests: XCTestCase {
+class GroupsTableViewControllerTests: QuickSpec {
 
-    var groupsTableView: GroupsTableViewController?
-    var tableView: GenericTableView?
-    var dataSource: GroupsTableViewDataSource?
+    override func spec() {
 
-    override func setUp() {
-        super.setUp()
-        groupsTableView = GroupsTableViewController()
-        tableView = groupsTableView?.view as? GenericTableView
-        dataSource = tableView?.dataSource as? GroupsTableViewDataSource
-    }
+        describe("GroupsTableViewController tests") {
 
-    override func tearDown() {
-        super.tearDown()
-    }
+            var sut: GroupsTableViewController?
 
-    func testTableViewLoaded() {
-        XCTAssertNotNil(tableView, "table view must not be nil")
-    }
+            beforeEach {
+                sut = GroupsTableViewController()
+            }
 
-    func testTableViewDataSource() {
-        XCTAssertNotNil(dataSource, "table view data source must not be nil")
-    }
+            it("should not be nil") {
+                expect(sut).toNot(beNil())
+            }
 
-    func testTableViewDelegate() {
-        XCTAssertNotNil(tableView?.delegate, "table view delegate must not be nil")
-        XCTAssertTrue(groupsTableView?.conforms(to: UITableViewDelegate.self) ?? false, "view must conform to UITableViewDelegate")
-    }
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = GroupsTableViewController(coder: NSCoder())
+                        }.to(throwAssertion())
+                }
+            #endif
 
-    func testNumberOfSections() {
-        XCTAssertTrue(tableView?.numberOfSections == 1, "table view must have 1 section")
-    }
+            it("should conform to UITableViewDelegate") {
+                expect(sut?.conforms(to: UITableViewDelegate.self)).to(beTrue())
+            }
 
-    func testNumberOfRows() {
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 1, "table view must have 1 rows in section 0")
-    }
+        }
 
-    func testAddNewGroup() {
-        let group = Group()
-        groupsTableView?.addNewGroupAndDismiss(UIViewController(), group: group)
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 2, "table view must have 2 rows in section 0")
-    }
-
-    func testSelectRow() {
-        XCTAssertTrue(tableView?.allowsSelection ?? false)
-    }
-
-    func testDeleteGroup() {
-        dataSource?.tableView(tableView!, commit: .delete, forRowAt: IndexPath(item: 0, section: 0))
-        XCTAssertTrue(tableView?.numberOfRows(inSection: 0) == 0, "table view must have 0 rows in section 0")
     }
 
 }

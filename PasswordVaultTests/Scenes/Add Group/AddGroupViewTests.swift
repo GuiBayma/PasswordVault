@@ -28,29 +28,29 @@ class AddGroupViewTests: QuickSpec {
 
         describe("AddGroupViewTests tests") {
 
-            var addGroupView: AddGroupView?
+            var sut: AddGroupView?
             var buttonActionMock: ButtonActionMock?
 
             beforeEach {
-                addGroupView = AddGroupView()
+                sut = AddGroupView()
                 buttonActionMock = ButtonActionMock()
-                addGroupView?.buttonAction = buttonActionMock?.buttonAction
+                sut?.buttonAction = buttonActionMock?.buttonAction
             }
 
             it("shoul not be nil") {
-                expect(addGroupView).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
                 it("should not load through storyboard") {
                     expect {
                         _ = AddGroupView(coder: NSCoder())
-                        }.to(throwAssertion())
+                    }.to(throwAssertion())
                 }
             #endif
 
             it("should return true on button action") {
-                addGroupView?.button.sendActions(for: .touchUpInside)
+                sut?.button.sendActions(for: .touchUpInside)
                 expect(buttonActionMock?.wasPressed).to(beTrue())
             }
 

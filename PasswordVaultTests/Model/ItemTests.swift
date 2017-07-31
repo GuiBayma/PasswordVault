@@ -16,31 +16,31 @@ class ItemTests: QuickSpec {
 
     override func spec() {
 
-        var item: Item?
+        var sut: Item?
 
         describe("Item tests") {
 
             beforeEach {
-                item = Item()
-                item?.name = "Item 1"
-                item?.userName = "User name"
-                item?.password = "Secret key"
+                sut = Item()
+                sut?.name = "Item 1"
+                sut?.userName = "User name"
+                sut?.password = "Secret key"
             }
 
             it("should not be nil") {
-                expect(item).toNot(beNil())
+                expect(sut).toNot(beNil())
             }
 
             it("should return 'Item 1' as the name of the item") {
-                expect(item?.name) == "Item 1"
+                expect(sut?.name) == "Item 1"
             }
 
             it("should return 'User name' as the user name of the item") {
-                expect(item?.userName) == "User name"
+                expect(sut?.userName) == "User name"
             }
 
             it("should return 'Secret key' as the password of the item") {
-                expect(item?.password) == "Secret key"
+                expect(sut?.password) == "Secret key"
             }
 
         }

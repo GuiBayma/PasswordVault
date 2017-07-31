@@ -6,30 +6,46 @@
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Quick
+import Nimble
 
-class ItemTableViewCellTests: XCTestCase {
+@testable import PasswordVault
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+class ItemTableViewCellTests: QuickSpec {
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    override func spec() {
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        describe("ItemTableViewCell tests") {
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            var sut: ItemTableViewCell?
+
+            beforeEach {
+                sut = ItemTableViewCell()
+            }
+
+            it("should not be nil") {
+                expect(sut).toNot(beNil())
+            }
+
+            #if arch(x86_64) && _runtime(_ObjC) && !SWIFT_PACKAGE
+                it("should not load through storyboard") {
+                    expect {
+                        _ = ItemTableViewCell(coder: NSCoder())
+                    }.to(throwAssertion())
+                }
+            #endif
+
+            it("should configure correctly") {
+                let item = Item()
+                item.name = "Item name"
+
+                sut?.configure(item)
+                expect(sut?.label.text) == item.name
+            }
+
         }
+
     }
 
 }

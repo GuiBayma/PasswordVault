@@ -6,30 +6,59 @@
 //  Copyright © 2017 Bayma. All rights reserved.
 //
 
-import XCTest
+import Foundation
+import Quick
+import Nimble
 
-class GroupDetailTableViewDataSourceTests: XCTestCase {
+@testable import PasswordVault
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+class GroupDetailTableViewDataSourceTests: QuickSpec {
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
+    override func spec() {
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        describe("GroupDetailTableViewDataSource tests") {
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            var sut: GroupDetailTableViewDataSource?
+            let tableView = UITableView()
+
+            beforeEach {
+                sut = GroupDetailTableViewDataSource()
+                tableView.dataSource = sut
+                tableView.register(cellType: ItemTableViewCell.self)
+                sut?.tableView = tableView
+
+                let item1 = Item()
+                item1.name = "Item one"
+                let item2 = Item()
+                item2.name = "Item two"
+                sut?.setData([item1, item2])
+            }
+
+            it("should not be nil") {
+                expect(sut).toNot(beNil())
+            }
+
+            it("should have 1 section") {
+                expect(tableView.numberOfSections) == 1
+            }
+
+            it("should return the number of rows correctly") {
+                expect(tableView.numberOfRows(inSection: 0)) == 2
+            }
+
+            it("should set the data correctly") {
+                let item = Item()
+                sut?.setData([item])
+                expect(tableView.numberOfRows(inSection: 0)) == 1
+            }
+
+            it("should return the cell correctly") {
+                let indexPath = IndexPath(row: 0, section: 0)
+                let cell = sut?.tableView(tableView, cellForRowAt: indexPath) as? ItemTableViewCell
+                expect(cell?.label.text) == "Item one"
+            }
         }
+
     }
 
 }
