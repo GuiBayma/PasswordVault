@@ -58,8 +58,12 @@ class AddGroupViewControllerTests: QuickSpec {
             }
 
             it("should dismiss and create new group through text field return") {
-                let textField = (addGroupController?.view as! AddGroupView).labeledTextField.textField
-
+                guard
+                    let textField = (addGroupController?.view as? AddGroupView)?.labeledTextField.textField
+                else {
+                    fail("textfield should not be nil")
+                    return
+                }
                 expect(addGroupController?.textFieldShouldReturn(textField)).to(beTrue())
 
 //                waitUntil { done in
