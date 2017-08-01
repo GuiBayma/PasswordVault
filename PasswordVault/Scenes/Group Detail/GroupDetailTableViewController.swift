@@ -10,6 +10,7 @@ import UIKit
 
 enum ItemsNavigation {
     case newItem
+    case itemDetail
 }
 
 class GroupDetailTableViewController: UIViewController, UITableViewDelegate, NewDataDelegate {
@@ -56,6 +57,8 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate, New
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = dataSource.getData(at: indexPath.item)
+        navigate(destination: .itemDetail, item: item)
     }
 
     // MARK: - New data delegate
@@ -82,6 +85,11 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate, New
             nextView.delegate = self
             let navController = UINavigationController(rootViewController: nextView)
             self.present(navController, animated: true) {}
+            break
+        case .itemDetail:
+            let nextView = ItemDetailViewController()
+            nextView.item = item
+            navigationController?.pushViewController(nextView, animated: true)
         }
     }
 

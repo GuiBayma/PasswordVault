@@ -29,6 +29,12 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
         tableView?.reloadData()
     }
 
+    // MARK: - Get data
+
+    func getData(at index: Int) -> Item {
+        return data[index]
+    }
+
     // MARK: - Data Source
 
     func numberOfSections(in tableView: UITableView) -> Int {

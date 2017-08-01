@@ -26,11 +26,11 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
-    // MARK: - View lifecycle
-
     override func loadView() {
         self.view = addItemView
     }
+
+    // MARK: - View lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

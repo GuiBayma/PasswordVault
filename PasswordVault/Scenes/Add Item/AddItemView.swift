@@ -18,6 +18,8 @@ class AddItemView: UIView {
     let passwordLabeledTextField = LabeledTextField()
     let button = DoneButton()
 
+    // MARK: - Initialization
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
