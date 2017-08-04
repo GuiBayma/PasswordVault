@@ -15,6 +15,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
     fileprivate let addItemView = AddItemView()
     fileprivate var textFields: [UITextField] = []
     weak var delegate: NewDataDelegate?
+    var group: Group?
 
     // MARK: - Initializing
 
@@ -105,11 +106,17 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
         if name == "" {
             dismiss(animated: true) {}
         } else {
-            let newItem = Item()
-            newItem.name = name
-            newItem.userName = user
-            newItem.password = pwd
-            delegate?.addNewDataAndDismiss(self, data: newItem)
+            let newItem = ItemManager.sharedInstance.newItem()
+            newItem?.name = name
+            newItem?.userName = user
+            newItem?.password = pwd
+            if let item = newItem {
+                group?.addToItems(item)
+                _ = ItemManager.sharedInstance.save()
+                delegate?.addNewDataAndDismiss(self, data: item)
+            } else {
+                dismiss(animated: true) {}
+            }
         }
     }
 

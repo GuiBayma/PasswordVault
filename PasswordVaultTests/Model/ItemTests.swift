@@ -16,15 +16,24 @@ class ItemTests: QuickSpec {
 
     override func spec() {
 
-        var sut: Item?
-
         describe("Item tests") {
 
+            var sut: Item?
+            let manager = ItemManager.sharedInstance
+
             beforeEach {
-                sut = Item()
+                sut = manager.newItem()
                 sut?.name = "Item 1"
                 sut?.userName = "User name"
                 sut?.password = "Secret key"
+            }
+
+            afterEach {
+                if let s = sut {
+                    if !manager.delete(object: s) {
+                        fail("could not delete Item")
+                    }
+                }
             }
 
             it("should not be nil") {

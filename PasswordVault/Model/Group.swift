@@ -7,10 +7,28 @@
 //
 
 import Foundation
+import CoreData
 
-class Group: NSObject {
+@objc(Group)
+public class Group: NSManagedObject {
 
-    var name: String?
-    var items: [Item]?
+}
+
+extension Group {
+
+    @NSManaged public var name: String?
+    @NSManaged public var items: NSSet?
+
+    @objc(addItemsObject:)
+    @NSManaged public func addToItems(_ value: Item)
+
+    @objc(removeItemsObject:)
+    @NSManaged public func removeFromItems(_ value: Item)
+
+    @objc(addItems:)
+    @NSManaged public func addToItems(_ values: NSSet)
+
+    @objc(removeItems:)
+    @NSManaged public func removeFromItems(_ values: NSSet)
 
 }

@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
 
     // MARK: - Variables
 
-    fileprivate var data: [Item] = []
+    fileprivate var data: [NSManagedObject] = []
     weak var tableView: UITableView?
 
     // MARK: - Set Data
 
-    func setData(_ data: [Item]) {
+    func setData(_ data: [NSManagedObject]) {
         self.data = data
         tableView?.reloadData()
     }
@@ -31,8 +32,11 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
 
     // MARK: - Get data
 
-    func getData(at index: Int) -> Item {
-        return data[index]
+    func getData(at index: Int) -> Item? {
+        if let item = data[index] as? Item {
+            return item
+        }
+        return nil
     }
 
     // MARK: - Data Source
@@ -46,9 +50,10 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = data[indexPath.item]
         let cell = tableView.dequeueReusableCell(for:indexPath) as ItemTableViewCell
-        cell.configure(item)
+        if let item = data[indexPath.item] as? Item {
+            cell.configure(item)
+        }
         return cell
     }
 

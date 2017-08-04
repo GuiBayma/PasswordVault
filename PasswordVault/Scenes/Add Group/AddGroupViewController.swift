@@ -75,9 +75,14 @@ class AddGroupViewController: UIViewController, UITextFieldDelegate {
         if text == "" {
             dismiss(animated: true) {}
         } else {
-            let newGroup = Group()
-            newGroup.name = text
-            self.delegate?.addNewDataAndDismiss(self, data: newGroup)
+            let newGroup = GroupManager.sharedInstance.newGroup()
+            newGroup?.name = text
+            if let group = newGroup {
+                _ = GroupManager.sharedInstance.save()
+                self.delegate?.addNewDataAndDismiss(self, data: group)
+            } else {
+                dismiss(animated: true) {}
+            }
         }
     }
 

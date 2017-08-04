@@ -7,11 +7,18 @@
 //
 
 import Foundation
+import CoreData
 
-class Item: NSObject {
+@objc(Item)
+public class Item: NSManagedObject {
 
-    var name: String?
-    var userName: String?
-    var password: String?
+}
+
+extension Item {
+
+    @NSManaged public var name: String?
+    @NSManaged public var password: String?
+    @NSManaged public var userName: String?
+    @NSManaged public var group: Group?
 
 }

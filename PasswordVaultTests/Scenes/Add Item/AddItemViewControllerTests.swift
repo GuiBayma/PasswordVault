@@ -50,6 +50,16 @@ class AddItemViewControllerTests: QuickSpec {
                 }
             }
 
+            afterEach {
+                if let mock = newItemDelegateMock {
+                    if let item = mock.item {
+                        if !ItemManager.sharedInstance.delete(object: item) {
+                            fail("could not delete item")
+                        }
+                    }
+                }
+            }
+
             it("should not be nil") {
                 expect(sut).toNot(beNil())
             }

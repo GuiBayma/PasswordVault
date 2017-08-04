@@ -20,18 +20,44 @@ class GroupsTableViewDataSourceTests: QuickSpec {
 
             var sut: GroupsTableViewDataSource?
             let tableView = UITableView()
+            var group1: Group?
+            var group2: Group?
 
             beforeEach {
                 sut = GroupsTableViewDataSource()
                 tableView.dataSource = sut
                 tableView.register(cellType: GroupTableViewCell.self)
                 sut?.tableView = tableView
+            }
 
-                let group1 = Group()
+            beforeSuite {
+                group1 = GroupManager.sharedInstance.newGroup()
+                group2 = GroupManager.sharedInstance.newGroup()
+                guard
+                    let group1 = group1,
+                    let group2 = group2
+                else {
+                    fail("group is nil")
+                    return
+                }
                 group1.name = "Group one"
-                let group2 = Group()
                 group2.name = "Group two"
-                sut?.setData([group1, group2])
+            }
+
+            afterSuite {
+                guard
+                    let group1 = group1,
+                    let group2 = group2
+                else {
+                    fail("group is nil")
+                    return
+                }
+                if !GroupManager.sharedInstance.delete(object: group1) {
+                    fail("could not delete group")
+                }
+                if !GroupManager.sharedInstance.delete(object: group2) {
+                    fail("could not delete group")
+                }
             }
 
             it("should not be nil") {
@@ -42,31 +68,35 @@ class GroupsTableViewDataSourceTests: QuickSpec {
                 expect(tableView.numberOfSections) == 1
             }
 
-            it("should return the number of rows correctly") {
-                expect(tableView.numberOfRows(inSection: 0)) == 2
-            }
-
             it("should set the data correctly") {
-                let group = Group()
-                sut?.setData([group])
+                if let group1 = group1 {
+                    sut?.setData([group1])
+                }
                 expect(tableView.numberOfRows(inSection: 0)) == 1
             }
 
             it("should return the data correctly") {
+                if let group1 = group1 {
+                    sut?.setData([group1])
+                }
                 let group = sut?.getData(at: 0)
                 expect(group?.name) == "Group one"
             }
 
             it("should add data correctly") {
-                let group3 = Group()
-                sut?.addData(group3)
-                expect(tableView.numberOfRows(inSection: 0)) == 3
+                if let group2 = group2 {
+                    sut?.addData(group2)
+                }
+                expect(tableView.numberOfRows(inSection: 0)) == 1
             }
 
             it("should return the cell correctly") {
+                if let group2 = group2 {
+                    sut?.addData(group2)
+                }
                 let indexPath = IndexPath(row: 0, section: 0)
                 let cell = sut?.tableView(tableView, cellForRowAt: indexPath) as? GroupTableViewCell
-                expect(cell?.label.text) == "Group one"
+                expect(cell?.label.text) == "Group two"
             }
 
             it("should allow editing rows") {
@@ -74,9 +104,12 @@ class GroupsTableViewDataSourceTests: QuickSpec {
             }
 
             it("should remove data correctly") {
+                if let group1 = group1 {
+                    sut?.setData([group1])
+                }
                 let indexPath = IndexPath(row: 0, section: 0)
                 sut?.tableView(tableView, commit: .delete, forRowAt: indexPath)
-                expect(tableView.numberOfRows(inSection: 0)) == 1
+                expect(tableView.numberOfRows(inSection: 0)) == 0
             }
 
         }

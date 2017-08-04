@@ -49,13 +49,7 @@ class GroupsTableViewController: UIViewController, UITableViewDelegate, NewDataD
         tableView.dataSource = dataSource
 
         dataSource.tableView = tableView
-
-        let group1 = Group()
-        group1.name = "Group One"
-        let item1 = Item()
-        item1.name = "Item One"
-        group1.items = [item1]
-        dataSource.setData([group1])
+        dataSource.setData(GroupManager.sharedInstance.getAllGroups())
     }
 
     // MARK: - Table view delegte

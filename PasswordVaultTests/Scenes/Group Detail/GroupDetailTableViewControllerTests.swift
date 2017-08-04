@@ -22,11 +22,6 @@ class GroupDetailTableViewControllerTests: QuickSpec {
 
             beforeEach {
                 sut = GroupDetailTableViewController()
-
-                let group = Group()
-                let item = Item()
-                group.items = [item]
-                sut?.group = group
             }
 
             it("should not be nil") {

@@ -19,9 +19,18 @@ class ItemTableViewCellTests: QuickSpec {
         describe("ItemTableViewCell tests") {
 
             var sut: ItemTableViewCell?
+            let item = ItemManager.sharedInstance.newItem()
 
             beforeEach {
                 sut = ItemTableViewCell()
+            }
+
+            afterSuite {
+                if let itm = item {
+                    if !ItemManager.sharedInstance.delete(object: itm) {
+                        fail("could not delete Item")
+                    }
+                }
             }
 
             it("should not be nil") {
@@ -37,7 +46,10 @@ class ItemTableViewCellTests: QuickSpec {
             #endif
 
             it("should configure correctly") {
-                let item = Item()
+                guard let item = item else {
+                    fail("item is nil")
+                    return
+                }
                 item.name = "Item name"
 
                 sut?.configure(item)

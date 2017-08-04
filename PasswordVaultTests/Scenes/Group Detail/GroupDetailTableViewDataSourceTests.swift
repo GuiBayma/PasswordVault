@@ -20,18 +20,44 @@ class GroupDetailTableViewDataSourceTests: QuickSpec {
 
             var sut: GroupDetailTableViewDataSource?
             let tableView = UITableView()
+            var item1: Item?
+            var item2: Item?
 
             beforeEach {
                 sut = GroupDetailTableViewDataSource()
                 tableView.dataSource = sut
                 tableView.register(cellType: ItemTableViewCell.self)
                 sut?.tableView = tableView
+            }
 
-                let item1 = Item()
+            beforeSuite {
+                item1 = ItemManager.sharedInstance.newItem()
+                item2 = ItemManager.sharedInstance.newItem()
+                guard
+                    let item1 = item1,
+                    let item2 = item2
+                    else {
+                        fail("item is nil")
+                        return
+                }
                 item1.name = "Item one"
-                let item2 = Item()
                 item2.name = "Item two"
-                sut?.setData([item1, item2])
+            }
+
+            afterSuite {
+                guard
+                    let item1 = item1,
+                    let item2 = item2
+                    else {
+                        fail("item is nil")
+                        return
+                }
+                if !ItemManager.sharedInstance.delete(object: item1) {
+                    fail("could not delete item")
+                }
+                if !ItemManager.sharedInstance.delete(object: item2) {
+                    fail("could not delete item")
+                }
             }
 
             it("should not be nil") {
@@ -42,20 +68,35 @@ class GroupDetailTableViewDataSourceTests: QuickSpec {
                 expect(tableView.numberOfSections) == 1
             }
 
-            it("should return the number of rows correctly") {
-                expect(tableView.numberOfRows(inSection: 0)) == 2
-            }
-
             it("should set the data correctly") {
-                let item = Item()
-                sut?.setData([item])
+                if let item1 = item1 {
+                    sut?.setData([item1])
+                }
                 expect(tableView.numberOfRows(inSection: 0)) == 1
             }
 
+            it("should add data correctly") {
+                if let item2 = item2 {
+                    sut?.addData(item2)
+                }
+                expect(tableView.numberOfRows(inSection: 0)) == 1
+            }
+
+            it("should return the data correctly") {
+                if let item1 = item1 {
+                    sut?.setData([item1])
+                }
+                let item = sut?.getData(at: 0)
+                expect(item?.name) == "Item one"
+            }
+
             it("should return the cell correctly") {
+                if let item2 = item2 {
+                    sut?.addData(item2)
+                }
                 let indexPath = IndexPath(row: 0, section: 0)
                 let cell = sut?.tableView(tableView, cellForRowAt: indexPath) as? ItemTableViewCell
-                expect(cell?.label.text) == "Item one"
+                expect(cell?.label.text) == "Item two"
             }
         }
 

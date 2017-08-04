@@ -50,7 +50,9 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate, New
         tableView.dataSource = dataSource
 
         dataSource.tableView = tableView
-        dataSource.setData(group?.items ?? [])
+        if let i = group?.items {
+            dataSource.setData(Array(i) as? [Item] ?? [])
+        }
     }
 
     // MARK: - Table view delegte

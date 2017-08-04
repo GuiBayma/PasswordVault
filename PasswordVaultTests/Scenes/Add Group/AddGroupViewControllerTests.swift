@@ -46,6 +46,16 @@ class AddGroupViewControllerTests: QuickSpec {
                 }
             }
 
+            afterEach {
+                if let mock = newGroupDelegateMock {
+                    if let group = mock.group {
+                        if !GroupManager.sharedInstance.delete(object: group) {
+                            fail("could not delete group")
+                        }
+                    }
+                }
+            }
+
             it("should not be nil") {
                 expect(sut).toNot(beNil())
             }

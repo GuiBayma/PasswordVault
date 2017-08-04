@@ -16,16 +16,31 @@ class GroupTests: QuickSpec {
 
     override func spec() {
 
-        var sut: Group?
-
         describe("Group tests") {
 
-            beforeEach {
-                sut = Group()
-                sut?.name = "Group 1"
+            var sut: Group?
+            let item = ItemManager.sharedInstance.newItem()
+            let manager = GroupManager.sharedInstance
 
-                let item = Item()
-                sut?.items = [item]
+            beforeEach {
+                sut = manager.newGroup()
+                sut?.name = "Group 1"
+            }
+
+            afterEach {
+                if let s = sut {
+                    if !manager.delete(object: s) {
+                        fail("could not delete Group")
+                    }
+                }
+            }
+
+            afterSuite {
+                if let itm = item {
+                    if !ItemManager.sharedInstance.delete(object: itm) {
+                        fail("could not delete Item")
+                    }
+                }
             }
 
             it("should not be nil") {
@@ -36,8 +51,42 @@ class GroupTests: QuickSpec {
                 expect(sut?.name) == "Group 1"
             }
 
-            it("should contain one item") {
+            it("should add to items") {
+                if let item = item {
+                    sut?.addToItems(item)
+                }
                 expect(sut?.items?.count) == 1
+            }
+
+            it("should remove from items") {
+                if let item = item {
+                    sut?.removeFromItems(item)
+                }
+                expect(sut?.items?.count) == 0
+            }
+
+            it("should add items") {
+                guard
+                    let item = item
+                else {
+                    fail("item is nil")
+                    return
+                }
+                let set = NSSet(object: item)
+                sut?.addToItems(set)
+                expect(sut?.items?.count) == 1
+            }
+
+            it("should remove items") {
+                guard
+                    let item = item
+                else {
+                    fail("item is nil")
+                    return
+                }
+                let set = NSSet(object: item)
+                sut?.removeFromItems(set)
+                expect(sut?.items?.count) == 0
             }
 
         }

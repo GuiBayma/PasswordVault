@@ -16,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        let groups = GroupManager.sharedInstance.getAllGroups()
+        print("\(groups.count) groups found\n")
+//        for group in groups {
+//            _ = GroupManager.sharedInstance.delete(object: group)
+//        }
+
+        let items = ItemManager.sharedInstance.getAllItems()
+        print("\(items.count) items found\n")
+//        for item in items {
+//            _ = GroupManager.sharedInstance.delete(object: item)
+//        }
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
         let mainView = GroupsTableViewController()

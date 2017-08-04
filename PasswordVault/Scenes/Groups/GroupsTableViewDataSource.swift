@@ -7,25 +7,29 @@
 //
 
 import UIKit
+import CoreData
 
 class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
 
     // MARK: - Variables
 
-    fileprivate var data: [Group] = []
+    fileprivate var data: [NSManagedObject] = []
     weak var tableView: UITableView?
 
     // MARK: - Set Data
 
-    func setData(_ data: [Group]) {
+    func setData(_ data: [NSManagedObject]) {
         self.data = data
         tableView?.reloadData()
     }
 
     // MARK: - Return data
 
-    func getData(at index: Int) -> Group {
-        return data[index]
+    func getData(at index: Int) -> Group? {
+        if let group = data[index] as? Group {
+            return group
+        }
+        return nil
     }
 
     // MARK: - Add data
@@ -53,9 +57,10 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item = data[indexPath.item]
         let cell = tableView.dequeueReusableCell(for:indexPath) as GroupTableViewCell
-        cell.configure(item)
+        if let group = data[indexPath.item] as? Group {
+            cell.configure(group)
+        }
         return cell
     }
 

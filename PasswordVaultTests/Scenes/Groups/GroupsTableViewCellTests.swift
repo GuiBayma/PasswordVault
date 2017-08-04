@@ -19,9 +19,18 @@ class GroupsTableViewCellTests: QuickSpec {
         describe("GroupsTableViewCell tests") {
 
             var sut: GroupTableViewCell?
+            let group = GroupManager.sharedInstance.newGroup()
 
             beforeEach {
                 sut = GroupTableViewCell()
+            }
+
+            afterSuite {
+                if let grp = group {
+                    if !GroupManager.sharedInstance.delete(object: grp) {
+                        fail("could not delete group")
+                    }
+                }
             }
 
             it("should not be nil") {
@@ -32,12 +41,15 @@ class GroupsTableViewCellTests: QuickSpec {
                 it("should not load through storyboard") {
                     expect {
                         _ = GroupTableViewCell(coder: NSCoder())
-                        }.to(throwAssertion())
+                    }.to(throwAssertion())
                 }
             #endif
 
             it("should configure correctly") {
-                let group = Group()
+                guard let group = group else {
+                    fail("group is nil")
+                    return
+                }
                 group.name = "Group name"
 
                 sut?.configure(group)
