@@ -38,17 +38,18 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
         }
         return nil
     }
-    
+
     // MARK: - Delete data
 
     fileprivate func removeDataAt(_ indexPath: IndexPath) {
-        let item = data[indexPath.item]
-        if ItemManager.sharedInstance.delete(object: item) {
-            data.remove(at: indexPath.item)
-            tableView?.deleteRows(at: [indexPath], with: .automatic)
+        if let item = data[indexPath.item] as? Item {
+            if ItemManager.sharedInstance.delete(object: item) {
+                data.remove(at: indexPath.item)
+                tableView?.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
     }
-    
+
     // MARK: - Data Source
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,11 +67,11 @@ class GroupDetailTableViewDataSource: NSObject, UITableViewDataSource {
         }
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             removeDataAt(indexPath)

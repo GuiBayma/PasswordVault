@@ -37,6 +37,7 @@
 		955B4B941F2A782C005E1DD5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B931F2A782C005E1DD5 /* Item.swift */; };
 		955B4B961F2A78AE005E1DD5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B951F2A78AE005E1DD5 /* ItemTableViewCell.swift */; };
 		955B4B9A1F2A8DBA005E1DD5 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */; };
+		958DD1531F38EB8C00FA73DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD1521F38EB8C00FA73DB /* Extensions.swift */; };
 		9596BA9B1F2FB96200AD14CD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9A1F2FB96200AD14CD /* AddItemViewController.swift */; };
 		9596BA9D1F2FB97600AD14CD /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9C1F2FB97600AD14CD /* AddItemView.swift */; };
 		9596BAA01F2FBE6C00AD14CD /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9F1F2FBE6C00AD14CD /* DoneButton.swift */; };
@@ -106,6 +107,7 @@
 		955B4B951F2A78AE005E1DD5 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = "Scenes/Group Detail/ItemTableViewCell.swift"; sourceTree = "<group>"; };
 		955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTests.swift; path = Model/ItemTests.swift; sourceTree = "<group>"; };
 		9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.release.xcconfig"; sourceTree = "<group>"; };
+		958DD1521F38EB8C00FA73DB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9596BA9A1F2FB96200AD14CD /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemViewController.swift; path = "Scenes/Add Item/AddItemViewController.swift"; sourceTree = "<group>"; };
 		9596BA9C1F2FB97600AD14CD /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemView.swift; path = "Scenes/Add Item/AddItemView.swift"; sourceTree = "<group>"; };
 		9596BA9F1F2FBE6C00AD14CD /* DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButton.swift; path = Components/DoneButton.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		952B74AB1F292E8600B378FF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				958DD1521F38EB8C00FA73DB /* Extensions.swift */,
 				952B74AC1F292EB000B378FF /* Protocols.swift */,
 			);
 			name = Util;
@@ -621,6 +624,7 @@
 				9596BAB61F30BAF500AD14CD /* PasswordVault.xcdatamodeld in Sources */,
 				952B74AD1F292EB000B378FF /* Protocols.swift in Sources */,
 				9596BAAA1F30B09300AD14CD /* ItemDetailViewController.swift in Sources */,
+				958DD1531F38EB8C00FA73DB /* Extensions.swift in Sources */,
 				9596BA9B1F2FB96200AD14CD /* AddItemViewController.swift in Sources */,
 				9596BABA1F30BB3300AD14CD /* GroupManager.swift in Sources */,
 				955B4B901F2A76D7005E1DD5 /* GroupDetailTableViewController.swift in Sources */,

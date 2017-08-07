@@ -111,7 +111,7 @@ class AddItemViewController: UIViewController, UITextFieldDelegate {
             newItem?.userName = user
             newItem?.password = pwd
             if let item = newItem {
-                group?.addToItems(item)
+                group?.addItem(item)
                 _ = ItemManager.sharedInstance.save()
                 delegate?.addNewDataAndDismiss(self, data: item)
             } else {

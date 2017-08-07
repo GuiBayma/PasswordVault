@@ -67,6 +67,7 @@ class GroupDetailTableViewController: UIViewController, UITableViewDelegate, New
 
     func addNewDataAndDismiss(_ viewController: UIViewController, data: NSObject) {
         if let item = data as? Item {
+            group?.addItem(item)
             dataSource.addData(item)
         }
         viewController.dismiss(animated: true) {}

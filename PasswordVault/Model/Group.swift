@@ -12,23 +12,25 @@ import CoreData
 @objc(Group)
 public class Group: NSManagedObject {
 
+    func addItem(_ item: Item) {
+        if let newSet = items?.adding(item) as NSSet? {
+            self.items = newSet
+        }
+        _ = GroupManager.sharedInstance.save()
+    }
+
+    func removeItem(_ item: Item) {
+        if var itemsArray = items?.allObjects as? [Item] {
+            itemsArray.removeItem(item)
+            self.items = NSSet(array: itemsArray)
+        }
+        _ = GroupManager.sharedInstance.save()
+    }
 }
 
 extension Group {
 
     @NSManaged public var name: String?
     @NSManaged public var items: NSSet?
-
-    @objc(addItemsObject:)
-    @NSManaged public func addToItems(_ value: Item)
-
-    @objc(removeItemsObject:)
-    @NSManaged public func removeFromItems(_ value: Item)
-
-    @objc(addItems:)
-    @NSManaged public func addToItems(_ values: NSSet)
-
-    @objc(removeItems:)
-    @NSManaged public func removeFromItems(_ values: NSSet)
 
 }

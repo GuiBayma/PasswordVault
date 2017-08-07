@@ -42,10 +42,11 @@ class GroupsTableViewDataSource: NSObject, UITableViewDataSource {
     // MARK: - Delete data
 
     fileprivate func removeDataAt(_ indexPath: IndexPath) {
-        let group = data[indexPath.item]
-        if GroupManager.sharedInstance.delete(object: group) {
-            data.remove(at: indexPath.item)
-            tableView?.deleteRows(at: [indexPath], with: .automatic)
+        if let group = data[indexPath.item] as? Group {
+            if GroupManager.sharedInstance.delete(object: group) {
+                data.remove(at: indexPath.item)
+                tableView?.deleteRows(at: [indexPath], with: .automatic)
+            }
         }
     }
 

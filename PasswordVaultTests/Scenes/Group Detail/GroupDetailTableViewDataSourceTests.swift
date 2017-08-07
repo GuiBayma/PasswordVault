@@ -98,11 +98,11 @@ class GroupDetailTableViewDataSourceTests: QuickSpec {
                 let cell = sut?.tableView(tableView, cellForRowAt: indexPath) as? ItemTableViewCell
                 expect(cell?.label.text) == "Item two"
             }
-            
+
             it("should allow editing rows") {
                 expect(sut?.tableView(tableView, canEditRowAt: IndexPath())).to(beTrue())
             }
-            
+
             it("should remove data correctly") {
                 if let item1 = item1 {
                     sut?.setData([item1])

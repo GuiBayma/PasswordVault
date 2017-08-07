@@ -77,7 +77,7 @@ class GroupManagerTests: QuickSpec {
                 group = sut?.newGroup()
                 item = ItemManager.sharedInstance.newItem()
                 if let item = item {
-                    group?.addToItems(item)
+                    group?.addItem(item)
                 }
 
                 if let group = group {
