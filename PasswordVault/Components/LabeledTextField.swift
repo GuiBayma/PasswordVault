@@ -49,6 +49,7 @@ class LabeledTextField: UIView {
             maker.left.equalTo(self)
             maker.right.equalTo(self)
         }
+        textField.autocorrectionType = .no
 
         // Line
         lineView.snp.makeConstraints { (maker) in

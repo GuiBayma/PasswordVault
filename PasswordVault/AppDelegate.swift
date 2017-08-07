@@ -16,17 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        // Debug
         let groups = GroupManager.sharedInstance.getAllGroups()
         print("\(groups.count) groups found\n")
 //        for group in groups {
 //            _ = GroupManager.sharedInstance.delete(object: group)
 //        }
-
+        
         let items = ItemManager.sharedInstance.getAllItems()
         print("\(items.count) items found\n")
 //        for item in items {
 //            _ = GroupManager.sharedInstance.delete(object: item)
 //        }
+        
+        UserDefaults.standard.removeObject(forKey: "AppPasswordKey")
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
@@ -45,7 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Ask for password and/or remove view that was blocking the app
+        if let topController = UIApplication.topViewController() {
+            if let _ = UserDefaults.standard.string(forKey: "AppPasswordKey") {
+                let passView = PasswordViewController()
+                topController.present(passView, animated: false) {}
+            } else {
+                let newPassView = NewPasswordViewController()
+                topController.present(newPassView, animated: false) {}
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

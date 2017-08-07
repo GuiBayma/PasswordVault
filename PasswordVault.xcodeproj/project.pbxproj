@@ -38,6 +38,10 @@
 		955B4B961F2A78AE005E1DD5 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B951F2A78AE005E1DD5 /* ItemTableViewCell.swift */; };
 		955B4B9A1F2A8DBA005E1DD5 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */; };
 		958DD1531F38EB8C00FA73DB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD1521F38EB8C00FA73DB /* Extensions.swift */; };
+		958DD1581F39012E00FA73DB /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD1571F39012E00FA73DB /* NewPasswordViewController.swift */; };
+		958DD15C1F39016500FA73DB /* NewPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD15B1F39016500FA73DB /* NewPasswordView.swift */; };
+		958DD15E1F39278D00FA73DB /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD15D1F39278D00FA73DB /* PasswordViewController.swift */; };
+		958DD1621F392E4500FA73DB /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958DD1611F392E4500FA73DB /* BackgroundView.swift */; };
 		9596BA9B1F2FB96200AD14CD /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9A1F2FB96200AD14CD /* AddItemViewController.swift */; };
 		9596BA9D1F2FB97600AD14CD /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9C1F2FB97600AD14CD /* AddItemView.swift */; };
 		9596BAA01F2FBE6C00AD14CD /* DoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596BA9F1F2FBE6C00AD14CD /* DoneButton.swift */; };
@@ -108,6 +112,10 @@
 		955B4B991F2A8DBA005E1DD5 /* ItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTests.swift; path = Model/ItemTests.swift; sourceTree = "<group>"; };
 		9561C9B9C838B87E0AD22D71 /* Pods-PasswordVault.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PasswordVault.release.xcconfig"; path = "Pods/Target Support Files/Pods-PasswordVault/Pods-PasswordVault.release.xcconfig"; sourceTree = "<group>"; };
 		958DD1521F38EB8C00FA73DB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		958DD1571F39012E00FA73DB /* NewPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPasswordViewController.swift; path = "Scenes/Authentication/New Password/NewPasswordViewController.swift"; sourceTree = "<group>"; };
+		958DD15B1F39016500FA73DB /* NewPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewPasswordView.swift; path = "Scenes/Authentication/New Password/NewPasswordView.swift"; sourceTree = "<group>"; };
+		958DD15D1F39278D00FA73DB /* PasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordViewController.swift; path = Scenes/Authentication/PasswordViewController.swift; sourceTree = "<group>"; };
+		958DD1611F392E4500FA73DB /* BackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackgroundView.swift; path = Scenes/Authentication/BackgroundView.swift; sourceTree = "<group>"; };
 		9596BA9A1F2FB96200AD14CD /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemViewController.swift; path = "Scenes/Add Item/AddItemViewController.swift"; sourceTree = "<group>"; };
 		9596BA9C1F2FB97600AD14CD /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddItemView.swift; path = "Scenes/Add Item/AddItemView.swift"; sourceTree = "<group>"; };
 		9596BA9F1F2FBE6C00AD14CD /* DoneButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DoneButton.swift; path = Components/DoneButton.swift; sourceTree = "<group>"; };
@@ -162,6 +170,7 @@
 			children = (
 				951A8DA51F2B713900BC0F22 /* Add Group */,
 				9596BA9E1F2FBAAD00AD14CD /* Add Item */,
+				958DD1551F39007400FA73DB /* Authentication */,
 				951A8DA71F2B714600BC0F22 /* Group Detail */,
 				951A8DA61F2B714000BC0F22 /* Groups */,
 				9596BAA81F30AF6A00AD14CD /* Item Detail */,
@@ -203,6 +212,7 @@
 			children = (
 				952B74B61F294A6500B378FF /* Add Group */,
 				9596BA991F2FB8F100AD14CD /* Add Item */,
+				958DD1541F39000E00FA73DB /* Authentication */,
 				955B4B8E1F2A70B1005E1DD5 /* Group Detail */,
 				952B74A01F29245B00B378FF /* Groups */,
 				9596BAA71F30AE1500AD14CD /* Item Detail */,
@@ -334,6 +344,32 @@
 				9596BAA11F2FBFFA00AD14CD /* DoneButtonTests.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		958DD1541F39000E00FA73DB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				958DD1561F3900C600FA73DB /* New password */,
+				958DD15D1F39278D00FA73DB /* PasswordViewController.swift */,
+				958DD1611F392E4500FA73DB /* BackgroundView.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		958DD1551F39007400FA73DB /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		958DD1561F3900C600FA73DB /* New password */ = {
+			isa = PBXGroup;
+			children = (
+				958DD1571F39012E00FA73DB /* NewPasswordViewController.swift */,
+				958DD15B1F39016500FA73DB /* NewPasswordView.swift */,
+			);
+			name = "New password";
 			sourceTree = "<group>";
 		};
 		9596BA991F2FB8F100AD14CD /* Add Item */ = {
@@ -615,6 +651,7 @@
 				952B74A21F29256200B378FF /* GenericTableView.swift in Sources */,
 				955B4B961F2A78AE005E1DD5 /* ItemTableViewCell.swift in Sources */,
 				955B4B921F2A77EE005E1DD5 /* GroupDetailTableViewDataSource.swift in Sources */,
+				958DD1621F392E4500FA73DB /* BackgroundView.swift in Sources */,
 				952B74B81F294ABF00B378FF /* AddGroupViewController.swift in Sources */,
 				9596BABC1F30BB3E00AD14CD /* ItemManager.swift in Sources */,
 				9596BAA01F2FBE6C00AD14CD /* DoneButton.swift in Sources */,
@@ -622,12 +659,15 @@
 				9531C6D91F29153900435143 /* AppDelegate.swift in Sources */,
 				952B74A61F29268D00B378FF /* GroupsTableViewDataSource.swift in Sources */,
 				9596BAB61F30BAF500AD14CD /* PasswordVault.xcdatamodeld in Sources */,
+				958DD15E1F39278D00FA73DB /* PasswordViewController.swift in Sources */,
 				952B74AD1F292EB000B378FF /* Protocols.swift in Sources */,
 				9596BAAA1F30B09300AD14CD /* ItemDetailViewController.swift in Sources */,
 				958DD1531F38EB8C00FA73DB /* Extensions.swift in Sources */,
 				9596BA9B1F2FB96200AD14CD /* AddItemViewController.swift in Sources */,
 				9596BABA1F30BB3300AD14CD /* GroupManager.swift in Sources */,
 				955B4B901F2A76D7005E1DD5 /* GroupDetailTableViewController.swift in Sources */,
+				958DD1581F39012E00FA73DB /* NewPasswordViewController.swift in Sources */,
+				958DD15C1F39016500FA73DB /* NewPasswordView.swift in Sources */,
 				952B74BA1F294C1500B378FF /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
