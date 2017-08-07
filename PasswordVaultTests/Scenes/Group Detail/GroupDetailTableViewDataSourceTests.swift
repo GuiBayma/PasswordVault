@@ -48,9 +48,9 @@ class GroupDetailTableViewDataSourceTests: QuickSpec {
                 guard
                     let item1 = item1,
                     let item2 = item2
-                    else {
-                        fail("item is nil")
-                        return
+                else {
+                    fail("item is nil")
+                    return
                 }
                 if !ItemManager.sharedInstance.delete(object: item1) {
                     fail("could not delete item")
@@ -97,6 +97,19 @@ class GroupDetailTableViewDataSourceTests: QuickSpec {
                 let indexPath = IndexPath(row: 0, section: 0)
                 let cell = sut?.tableView(tableView, cellForRowAt: indexPath) as? ItemTableViewCell
                 expect(cell?.label.text) == "Item two"
+            }
+            
+            it("should allow editing rows") {
+                expect(sut?.tableView(tableView, canEditRowAt: IndexPath())).to(beTrue())
+            }
+            
+            it("should remove data correctly") {
+                if let item1 = item1 {
+                    sut?.setData([item1])
+                }
+                let indexPath = IndexPath(row: 0, section: 0)
+                sut?.tableView(tableView, commit: .delete, forRowAt: indexPath)
+                expect(tableView.numberOfRows(inSection: 0)) == 0
             }
         }
 
