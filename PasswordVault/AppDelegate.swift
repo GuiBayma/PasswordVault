@@ -13,6 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var backgroundView: BackgroundView?
+    var didShowPasswordView = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
@@ -29,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            _ = GroupManager.sharedInstance.delete(object: item)
 //        }
         
-        UserDefaults.standard.removeObject(forKey: "AppPasswordKey")
-
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        backgroundView = BackgroundView(frame: window?.frame ?? CGRect())
 
         let mainView = GroupsTableViewController()
         let navController = UINavigationController(rootViewController: mainView)
@@ -43,18 +45,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        // Add View to block app when in background
-        // UIApplication.shared.ignoreSnapshotOnNextApplicationLaunch()
+        guard
+            let bView = backgroundView,
+            didShowPasswordView != true
+        else {
+            return
+        }
+        if let topController = UIApplication.topViewController() {
+            let topView = topController.view
+            topView?.addSubview(bView)
+        }
+        UIApplication.shared.ignoreSnapshotOnNextApplicationLaunch()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        if didShowPasswordView {
+            return
+        }
         if let topController = UIApplication.topViewController() {
             if let _ = UserDefaults.standard.string(forKey: "AppPasswordKey") {
                 let passView = PasswordViewController()
-                topController.present(passView, animated: false) {}
+                topController.present(passView, animated: false) {
+                    self.backgroundView?.removeFromSuperview()
+                    self.didShowPasswordView = true
+                }
             } else {
                 let newPassView = NewPasswordViewController()
-                topController.present(newPassView, animated: false) {}
+                topController.present(newPassView, animated: false) {
+                    self.backgroundView?.removeFromSuperview()
+                }
             }
         }
     }

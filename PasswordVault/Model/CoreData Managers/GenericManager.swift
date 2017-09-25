@@ -19,6 +19,7 @@ public class GenericManager {
         }
     }
 
+    @discardableResult
     func save() -> Bool {
         do {
             try managedContext?.save()
@@ -29,6 +30,7 @@ public class GenericManager {
         }
     }
 
+    @discardableResult
     func delete(object: NSManagedObject) -> Bool {
         managedContext?.delete(object)
         return save()

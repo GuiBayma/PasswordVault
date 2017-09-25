@@ -35,7 +35,7 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
 
         passwordView.buttonAction = donePressed
         passwordView.labeledTextField.textField.delegate = self
-        passwordView.labeledTextField.label.text = "Digite a sua senha para acessar o aplicativo"
+        passwordView.label.text = "Digite a sua senha para acessar o aplicativo"
     }
 
     // MARK: - Text Field Delegate
@@ -57,7 +57,11 @@ class PasswordViewController: UIViewController, UITextFieldDelegate {
         if let text = passwordView.labeledTextField.textField.text {
             if let password = UserDefaults.standard.string(forKey: "AppPasswordKey") {
                 if password == text {
-                    dismiss(animated: true) {}
+                    dismiss(animated: true) {
+                        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                            appDelegate.didShowPasswordView = false
+                        }
+                    }
                 } else {
                     showErrorAlert()
                 }
